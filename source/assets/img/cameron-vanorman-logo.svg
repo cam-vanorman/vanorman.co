@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="365px" height="365px" viewBox="0 0 365 365" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Oval">
+            <path d="M182.5,365 C283.291967,365 365,283.291967 365,182.5 C365,150.743837 356.889101,120.882075 342.625913,94.8733246 C311.618684,38.3320179 251.535803,0 182.5,0 C81.7080332,0 0,81.7080332 0,182.5 C0,283.291967 81.7080332,365 182.5,365 Z" fill="#4D8AF0"></path>
+            <circle fill="#EEF4F4" cx="182.5" cy="182.5" r="167.5"></circle>
+        </g>
+        <text id="&lt;/CVO&gt;" font-family="Cabin-Bold, Cabin" font-size="100" font-weight="bold" letter-spacing="1.66666692" fill="#4D8AF0">
+            <tspan x="19" y="218">&lt;/CVO&gt;</tspan>
+        </text>
+    </g>
+</svg>

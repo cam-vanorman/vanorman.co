@@ -1,0 +1,54 @@
+.cards {
+  @apply block w-full items-center justify-center;
+}
+
+.card {
+  transition: all 0.2s linear;
+
+  @apply rounded shadow-lg bg-white mb-5 mx-auto p-0;
+
+  &:hover {
+    @apply shadow bg-grey-lighter text-white;
+  }
+
+  &__title,
+  h3 {
+    @apply text-tertiary text-xl m-0;
+  }
+
+  &__body {
+    @apply px-8 py-6 text-center;
+  }
+
+  &__img {
+    max-width: 100%;
+
+    @apply block mx-auto text-center;
+  }
+
+  &--primary {
+    @apply bg-primary text-white;
+
+    a {
+      @apply text-white;
+    }
+  }
+
+  h3 {
+    @apply mb-1;
+  }
+
+  p {
+    @apply m-0 text-sm;
+  }
+}
+
+@screen sm {
+  .cards {
+    @apply flex flex-wrap flex-row;
+  }
+
+  .card {
+    @apply mx-0 px-3;
+  }
+}
