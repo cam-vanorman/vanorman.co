@@ -15,14 +15,8 @@ pagination:
 @section('body')
     <h1>Projects</h1>
 
-    <hr class="border-b my-6">
-
     @foreach ($pagination->items as $project)
         @include('_components.project-preview-inline')
-
-        @if ($project != $pagination->items->last())
-            <hr class="border-b my-6">
-        @endif
     @endforeach
 
     @if ($pagination->pages->count() > 1)
