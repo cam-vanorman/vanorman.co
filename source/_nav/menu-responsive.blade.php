@@ -3,7 +3,7 @@
         <li class="pl-4">
             <a
                 title="{{ $page->siteName }} About"
-                href="/contact"
+                href="/about"
                 class="nav-menu__item hover:text-secondary"
             >About</a>
         </li>
