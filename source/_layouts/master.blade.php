@@ -28,7 +28,7 @@
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
 
-                  gtag('config', {{ getenv('GA_ID') }});
+                  gtag('config', '{{ getenv('GA_ID') }}');
                 </script>
             @endif
 
