@@ -6,6 +6,7 @@
 /build_local/
 /build_staging/
 /build_production/
+/public/
 /node_modules/
 /vendor/
 .DS_Store
