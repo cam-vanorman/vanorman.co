@@ -10,7 +10,7 @@
 @endpush
 
 @section('body')
-<h1>Contact</h1>
+<h1 class="my-8">Contact</h1>
 
 <form action="{!! $contact !!}" method="POST" class="mb-12">
     <div class="flex flex-wrap mb-6 -mx-3">

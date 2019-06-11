@@ -1,7 +1,7 @@
 ---
 pagination:
     collection: projects
-    perPage: 4
+    perPage: 10
 ---
 @extends('_layouts.master')
 
@@ -13,11 +13,13 @@ pagination:
 @endpush
 
 @section('body')
-    <h1>Projects</h1>
-
-    @foreach ($pagination->items as $project)
-        @include('_components.project-preview-inline')
-    @endforeach
+    <h1 class="my-8">Projects</h1>
+    
+    <div class="cards my-4"> 
+        @foreach ($pagination->items as $project)
+            @include('_components.project-preview-inline')
+        @endforeach
+    </div>
 
     @if ($pagination->pages->count() > 1)
         <nav class="flex text-base my-8">

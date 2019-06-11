@@ -7,7 +7,7 @@
 
     <div class="w-full p-5 mb-3">
         <div class="w-full">
-            <h2>Projects</h2>
+            <h2 class="mb-8">Projects</h2>
         </div>
         <div class="cards">
             @foreach ($projects as $project)        

@@ -1,5 +1,5 @@
 .cards {
-  @apply block w-full items-center justify-center;
+  @apply block w-full justify-end items-center;
 }
 
 .card {
@@ -8,12 +8,12 @@
   @apply rounded shadow-lg bg-white mb-5 mx-auto p-0;
 
   &:hover {
-    @apply shadow bg-grey-lighter text-white;
+    @apply shadow bg-steel-blue;
   }
 
   &__title,
   h3 {
-    @apply text-tertiary text-xl m-0;
+    @apply text-tertiary text-2xl m-0;
   }
 
   &__body {
@@ -45,7 +45,7 @@
 
 @screen sm {
   .cards {
-    @apply flex flex-wrap flex-row;
+    @apply flex flex-wrap;
   }
 
   .card {

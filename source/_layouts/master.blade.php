@@ -42,12 +42,12 @@
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
     </head>
 
-    <body class="flex flex-col justify-between min-h-screen bg-grey-lightest text-grey-darkest leading-normal font-sans">
-        <header class="flex items-center shadow-lg bg-white border-b h-20 py-4" role="banner">
+    <body class="flex flex-col justify-between min-h-screen bg-steel-blue text-grey-darkest leading-normal font-sans">
+        <header class="banner" role="banner">
             <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
                 <div class="flex items-center">
                     <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
-                        <h1 class="text-lg md:text-2xl text-blue-darkest font-semibold hover:text-blue-dark my-0">{{ $page->siteName }}</h1>
+                        <h1 class="text-lg md:text-2xl my-0 text-steel-blue hover:text-secondary">{{ $page->siteName }}</h1>
                     </a>
                 </div>
 
@@ -63,11 +63,11 @@
 
         @include('_nav.menu-responsive')
 
-        <main role="main" class="flex-auto w-full container max-w-xl mx-auto py-16 px-3">
+        <main role="main" class="flex-auto w-full container max-w-xl mx-auto py-8 px-3">
             @yield('body')
         </main>
 
-        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+        <footer class="bg-tertiary text-white text-center text-sm mt-12 py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-reset">
                 <li class="md:mr-2">
                     &copy; Cameron Van Orman {{ date('Y') }}.

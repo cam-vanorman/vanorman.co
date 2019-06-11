@@ -135,6 +135,16 @@ pre {
     }
 }
 
+img {
+    @apply .shadow-lg;
+    @apply .mx-auto;
+    @apply .my-8;
+    @apply .p-2;
+    @apply .rounded;
+    @apply .bg-tertiary;
+    @apply .block;
+}
+
 ::selection {
     @apply .bg-primary;
     @apply .text-white;

@@ -3,7 +3,7 @@
   height: 3.5rem;
   transition: all 0.3s;
 
-  @apply z-30 flex items-center justify-between flex-wrap py-3 px-5 bg-white shadow-md w-full;
+  @apply flex items-center shadow-lg bg-tertiary border-b h-16 py-4;
 
   &--active {
     position: fixed;
@@ -221,7 +221,7 @@
 }
 
 .search {
-  @apply transition-fast relative block h-10 w-full border border-2 border-grey-darker outline-none cursor-pointer text-grey-darker px-4 pb-0;
+  @apply transition-fast relative block h-10 w-full rounded-lg border border-tertiary outline-none cursor-pointer text-grey-darker px-4 pb-0;
 
   &:focus {
     @apply border-tertiary;
