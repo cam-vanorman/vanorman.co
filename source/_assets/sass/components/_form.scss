@@ -1,0 +1,12 @@
+.form__label {
+  @apply block text-tertiary font-semibold mb-2;
+}
+
+.form__text,
+.form__input {
+  @apply block w-full border shadow rounded-lg outline-none appearance-none mb-2 p-4;
+}
+
+.form__text {
+  @apply px-4 py-6;
+}

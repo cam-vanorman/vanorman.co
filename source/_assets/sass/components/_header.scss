@@ -241,9 +241,9 @@
   }
 }
 
-@screen lg {
+@screen sm {
   .search {
-    @apply w-1/2 
+    @apply w-1/2;
 
     &:focus {
       @apply w-3/4;

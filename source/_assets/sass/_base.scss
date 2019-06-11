@@ -7,10 +7,10 @@ body {
 a {
     @apply .font-semibold;
     @apply .no-underline;
-    @apply .text-blue-dark;
+    @apply .text-secondary;
 
     &:hover {
-        @apply .text-blue-darker;
+        @apply .text-tertiary;
     }
 }
 
@@ -54,7 +54,7 @@ h6 {
     @apply .leading-tight;
     @apply .mb-4;
     @apply .mt-8;
-    @apply .text-black;
+    @apply .text-tertiary;
 
     &:first-child {
         @apply .mt-0;
@@ -93,7 +93,7 @@ h6 {
 
 hr {
     @apply .border-b;
-    @apply .border-blue-lighter;
+    @apply .border-tertiary;
     @apply .my-12;
     @apply .rounded-full;
 }
@@ -136,6 +136,6 @@ pre {
 }
 
 ::selection {
-    @apply .bg-blue;
+    @apply .bg-primary;
     @apply .text-white;
     }
