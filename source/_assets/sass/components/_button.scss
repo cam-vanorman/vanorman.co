@@ -1,0 +1,18 @@
+.btn {
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  @apply bg-tertiary shadow-md rounded my-3 px-4 py-3 text-white leading-none uppercase tracking-wide;
+
+  &:hover {
+    @apply bg-white text-tertiary shadow;
+  }
+
+  &--primary {
+    @apply bg-primary;
+
+    &:hover {
+      @apply bg-white text-primary;
+    }
+  }
+}
