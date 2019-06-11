@@ -1,15 +1,19 @@
-# Jigsaw Blog Starter Template
+# Portfolio starter
 
-This is a starter template for creating a beautiful, customizable blog in Jigsaw with minimal effort. You’ll only have to change a few settings and you’re ready to go.
+This is a starter template for freelancers wanting to showcase projects/work. It's based on [Tighten.co's Jigsaw blog template.](http://jigsaw-blog-staging.tighten.co/)
 
-[View a preview of the blog template.](http://jigsaw-blog-staging.tighten.co/)
+This starter allows you to connect with your [contentful account](contentful.com). I'm currently using the free tier.
+
+Additionally I'm using [FieldGoal](https://fieldgoal.io) to manage forms on the front-end (without exposing my password). As well, each forms have reCaptchav2 enabled to prevent bot shenanigans from abusing your beautiful website.
 
 ## Installation
 
-After installing Jigsaw, run the following command from your project directory:
+After installing Jigsaw, run the following commands from your project directory:
 
 ```bash
-./vendor/bin/jigsaw init blog
+composer install
+npm install && npm run build
+./vendor/bin/jigsaw build
 ```
 
 This starter template includes samples of common page types, and comes pre-configured with:

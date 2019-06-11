@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'baseUrl' => 'http://localhost:3000/',
+    'baseUrl' => getenv('BASE_URL'),
     'production' => false,
-    'siteName' => 'Cameron Van Orman',
-    'siteDescription' => 'Web Developer',
-    'siteAuthor' => 'Cameron Van Orman',
+    'siteName' => getenv('SITE_NAME'),
+    'siteDescription' => getenv('SITE_DESCRIPTION'),
+    'siteAuthor' => getenv('SITE_AUTHOR'),
 
     // collections
     'collections' => [

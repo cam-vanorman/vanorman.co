@@ -1,9 +1,6 @@
 <?php
 
 return [
-    'baseUrl' => 'https://staging.vanorman.co/',
+    'baseUrl' => getenv('BASE_URL'),
     'production' => false,
-    'siteName' => 'Cameron Van Orman',
-    'siteDescription' => 'Web Developer',
-    'siteAuthor' => 'Cameron Van Orman',
 ];
