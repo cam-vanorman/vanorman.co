@@ -70,7 +70,7 @@
         <footer class="bg-tertiary text-white text-center text-sm mt-12 py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-reset">
                 <li class="md:mr-2">
-                    &copy; Cameron Van Orman {{ date('Y') }}.
+                   {{ $page->siteName }} Website Portfolio
                 </li>
             </ul>
         </footer>
