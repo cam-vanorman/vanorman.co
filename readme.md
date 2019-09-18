@@ -2,9 +2,9 @@
 
 This is a starter template for freelancers wanting to showcase projects/work. It's based on [Tighten.co's Jigsaw blog template.](http://jigsaw-blog-staging.tighten.co/)
 
-This starter allows you to connect with your [contentful account](contentful.com). I'm currently using the free tier.
+While the template was initially purposed for static content, this starterThis starter allows you to connect with your [contentful account](contentful.com). I'm currently using the free tier.
 
-Additionally I'm using [FieldGoal](https://fieldgoal.io) to manage forms on the front-end (without exposing my password). As well, each forms have reCaptchav2 enabled to prevent bot shenanigans from abusing your beautiful website.
+Additionally this template uses [FieldGoal](https://fieldgoal.io) to manage forms on the front-end (without exposing my password). As well, each form has reCaptchav2 enabled to prevent bot shenanigans from abusing your beautiful website.
 
 ## Installation
 
@@ -16,7 +16,7 @@ npm install && npm run build
 ./vendor/bin/jigsaw build
 ```
 
-This starter template includes samples of common page types, and comes pre-configured with:
+This template comes pre-configured with:
 
 - A fully responsive navigation bar
 - [Tailwind CSS](https://tailwindcss.com/), a utility CSS framework that allows you to customize your design without touching a line of CSS
@@ -30,10 +30,6 @@ This starter template includes samples of common page types, and comes pre-confi
 
 ---
 
-![Blog starter template screenshot](https://user-images.githubusercontent.com/357312/50345466-355c7700-04fd-11e9-83dd-f4e13ecdc97c.png)
-
----
-
 ### Configuring your new site
 
 As with all Jigsaw sites, configuration settings can be found in `config.php`; you can update the variables in that file with settings specific to your site. You can also add new configuration variables there to use across your site; take a look at the [Jigsaw documentation](http://jigsaw.tighten.co/docs/site-variables/) to learn more.
@@ -41,10 +37,10 @@ As with all Jigsaw sites, configuration settings can be found in `config.php`; y
 ```php
 // config.php
 return [
-    'baseUrl' => 'https://my-awesome-jigsaw-site.com/',
+    'baseUrl' => 'https://my-awesome-portfolio.com/',
     'production' => false,
     'siteName' => 'My Site',
-    'siteDescription' => 'Give your blog a boost with Jigsaw.',
+    'siteDescription' => 'Welcome to my portfolio',
     ...
 ];
 ```
@@ -55,18 +51,18 @@ return [
 
 ### Adding Content
 
-You can write your content using a [variety of file types](http://jigsaw.tighten.co/docs/content-other-file-types/). By default, this starter template expects your content to be located in the `source/_posts/` folder.
+You can write your content using a [variety of file types](http://jigsaw.tighten.co/docs/content-other-file-types/). By default, this starter template expects your content to be located in the `source/_projects/` folder.
 
-The top of each content page contains a YAML header that specifies how it should be rendered. The `title` attribute is used to dynamically generate HTML `title` and OpenGraph tags for each page. The `extends` attribute defines which parent Blade layout this content file will render with (e.g. `_layouts.project` will render with `source/_layouts/post.blade.php`), and the `section` attribute defines the Blade "section" that expects this content to be placed into it.
+The top of each content page contains a YAML header that specifies how it should be rendered. The `title` attribute is used to dynamically generate HTML `title` and OpenGraph tags for each page. The `extends` attribute defines which parent Blade layout this content file will render with (e.g. `_layouts.projects` will render with `source/_layouts/projects.blade.php`), and the `section` attribute defines the Blade "section" that expects this content to be placed into it.
 
 ```yaml
 ---
 extends: _layouts.project
 section: content
-title: Getting Started
+title: My Amazing Project
 date: 2018-12-25
-description: Getting started with the Jigsaw blog starter template
-cover_image: /assets/img/post-cover-image-2.png
+description: Project was so amazing I just had to put it on a website
+cover_image: /assets/img/amazing-project-omg.jpg
 featured: true
 ---
 ```
