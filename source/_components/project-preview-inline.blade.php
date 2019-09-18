@@ -1,4 +1,4 @@
-<div class="w-full lg:w-1/3 sm:w-1/2 px-3">
+<div class="w-full sm:w-1/2 px-3">
     <div class="card">
         <a
             href="{{ $project->getUrl() }}"
