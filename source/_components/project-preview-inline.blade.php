@@ -1,4 +1,4 @@
-<div class="flex-auto px-3">
+<div class="flex px-3">
     <div class="card w-full lg:w-1/3 sm:w-1/2">
         <a
             href="{{ $project->getUrl() }}"
