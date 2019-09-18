@@ -6,16 +6,16 @@ pagination:
 @extends('_layouts.master')
 
 @push('meta')
-    <meta property="og:title" content="{{ $page->siteName }} Projects" />
+    <meta property="og:title" content="Portfolio Website for {{ $page->siteName }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ $page->getUrl() }}"/>
-    <meta property="og:description" content="The list of projects for {{ $page->siteName }}" />
+    <meta property="og:description" content="Projects developed by {{ $page->siteName }}" />
 @endpush
 
 @section('body')
-    <h1 class="my-8">Projects</h1>
+    <h1 class="my-8 text-center">Projects</h1>
     
-    <div class="cards my-4"> 
+    <div class="cards my-4 justify-around"> 
         @foreach ($pagination->items as $project)
             @include('_components.project-preview-inline')
         @endforeach

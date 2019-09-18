@@ -14,7 +14,8 @@
         <title>{{ $page->siteName }}{{ $page->title ? ' | ' . $page->title : '' }}</title>
 
         <link rel="home" href="{{ $page->baseUrl }}">
-        <link rel="icon" href="/favicon.ico">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
         @stack('meta')
 
@@ -37,7 +38,7 @@
                 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
             @endif
         @endif
-
+    
         <link href="https://fonts.googleapis.com/css?family=Cabin:300,400,800" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
     </head>
