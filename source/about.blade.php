@@ -8,7 +8,8 @@
 @endpush
 
 @section('body')
+  <div class="page__content">
     <h1 class="my-8 text-center">About</h1>
-
     @include('_pages.about')
+  </div>
 @endsection

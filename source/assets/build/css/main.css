@@ -811,6 +811,19 @@ img {
   color: #fff;
 }
 
+.main__content {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
+}
+
 .main__content img {
   margin-left: auto;
   margin-right: auto;
@@ -818,6 +831,13 @@ img {
   margin-bottom: .75rem;
   box-shadow: 0 -1px 27px 0 rgba(0, 0, 0, .04), 0 4px 15px 0 rgba(0, 0, 0, .08);
   border-radius: .25rem;
+}
+
+.page__content {
+  max-width: 50rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .nav-menu {

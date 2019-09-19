@@ -13,8 +13,11 @@ pagination:
 @endpush
 
 @section('body')
-    <h1 class="my-8 text-center">Projects</h1>
-    
+    <div class="page__content">
+        <h1 class="my-8">Projects</h1>
+        @include('_pages.projects')
+    </div>
+
     <div class="cards my-4 justify-around"> 
         @foreach ($pagination->items as $project)
             @include('_components.project-preview-inline')

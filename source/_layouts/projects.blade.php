@@ -8,21 +8,21 @@
 @endpush
 
 @section('body')
-    
-    <h1 class="leading-none my-8">{{ $page->title }}</h1>
-    
-    @if ($page->image)
-        <img src="{{ $page->image }}" alt="{{ $page->title }} cover image" class="mb-2">
-    @endif
+    <div class="page__content">
+        <h1 class="leading-none my-8">{{ $page->title }}</h1>
+        
+        @if ($page->image)
+            <img src="{{ $page->image }}" alt="{{ $page->title }} cover image" class="mb-2">
+        @endif
+        
 
-    <div class="my-8 pb-4" v-pre>
         @yield('content')
 
         <div class="block text-center my-8">
-            <a href="{{ $page->url }}" rel="nofollow noopener" target="_blank" class="btn btn--primary">Visit Live Site</a>
+            <a href="{{ $page->url }}" rel="nofollow noopener" target="_blank" class="block btn btn--primary">Visit Live Site</a>
         </div>
     </div>
-
+{{-- 
     <nav class="flex justify-between md:text-base">
         <div>
             @if ($next = $page->getNext())
@@ -39,5 +39,5 @@
                 </a>
             @endif
         </div>
-    </nav>
+    </nav> --}}
 @endsection

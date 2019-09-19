@@ -1,5 +1,11 @@
 .main__content {
+  @apply flex-auto w-full max-w-xl mx-auto mt-16 py-8 px-3;
+
   img {
     @apply mx-auto my-3 shadow-lg rounded;
   }
+}
+
+.page__content {
+  @apply max-w-lg mb-8 mx-auto;
 }
