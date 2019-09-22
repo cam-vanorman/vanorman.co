@@ -12,6 +12,10 @@
 
     @apply w-full bg-steel-blue fill-current shadow-lg;
   }
+
+  &__title {
+    @apply text-lg my-0 uppercase text-steel-blue font-extrabold;
+  }
 }
 
 .admin-bar .banner--active {
@@ -29,14 +33,10 @@
     &:active {
       @apply text-secondary;
     }
-
-    /* .banner--active & {
-      @apply text-steel-blue;
-    } */
   }
 
   &__image {
-    width: 150px;
+    width: 200px;
     vertical-align: middle;
 
     @apply fill-current;
@@ -221,14 +221,10 @@
 }
 
 .search {
-  @apply transition-fast relative block h-10 w-full rounded-lg border border-tertiary outline-none cursor-pointer text-grey-darker px-4 pb-0;
-
-  &:focus {
-    @apply border-tertiary;
-  }
+  @apply transition-fast relative block h-10 w-full rounded-lg outline-none cursor-pointer text-grey-darker px-4 pb-0;
 }
 
-/*  */
+/* animate */
 @keyframes fadeInRight {
   0% {
     opacity: 0;

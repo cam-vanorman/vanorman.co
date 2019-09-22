@@ -1,10 +1,10 @@
 <template>
     <div class="flex flex-1 justify-end items-center text-right px-4">
         <div
-            class="absolute md:relative w-full justify-end pin-l pin-t z-10 mt-7 md:mt-0 px-4 md:px-0"
+            class="absolute md:relative w-full justify-end pin-l pin-t z-20 mt-7 md:mt-0 px-4 md:px-0"
             :class="{'hidden md:flex': ! searching}"
         >
-            <label for="search" class="hidden">Search</label>
+            <label for="search" class="hidden">Search Projects by Name</label>
 
             <input
                 id="search"
@@ -14,7 +14,7 @@
                 :class="{ 'transition-border': query }"
                 autocomplete="off"
                 name="search"
-                placeholder="Search"
+                placeholder="Search Projects by Name"
                 type="text"
                 @keyup.esc="reset"
                 @blur="reset"
@@ -22,16 +22,16 @@
 
             <button
                 v-if="query || searching"
-                class="absolute pin-t pin-r h-10 font-light text-3xl text-blue hover:text-blue-dark focus:outline-none -mt-px pr-7 md:pr-3"
+                class="absolute pin-t pin-r h-10 font-light text-3xl text-secondary hover:text-tertiary focus:outline-none -mt-px pr-7 md:pr-3"
                 @click="reset"
             >&times;</button>
 
             <transition name="fade">
                 <div v-if="query" class="absolute pin-l pin-r md:pin-none w-full lg:w-3/4 text-left mb-4 md:mt-10">
-                    <div class="flex flex-col bg-white border border-b-0 border-t-0 border-blue-light rounded-b-lg shadow-lg mx-4 md:mx-0">
+                    <div class="flex flex-col bg-white rounded-b-lg shadow-lg mx-4 md:mx-0">
                         <a
                             v-for="(result, index) in results"
-                            class="bg-white hover:bg-blue-lightest border-b border-blue-light text-xl cursor-pointer p-4"
+                            class="bg-white hover:bg-steel-blue text-lg cursor-pointer p-4"
                             :class="{ 'rounded-b-lg' : (index === results.length - 1) }"
                             :href="result.link"
                             :title="result.title"
@@ -40,12 +40,12 @@
                         >
                             {{ result.title }}
 
-                            <span class="block font-normal text-grey-darker text-sm my-1" v-html="result.snippet"></span>
+                            <span class="block font-normal text-tertiary text-sm my-1" v-html="result.snippet"></span>
                         </a>
 
                         <div
                             v-if="! results.length"
-                            class="bg-white w-full hover:bg-blue-lightest border-b border-blue-light rounded-b-lg shadow cursor-pointer p-4"
+                            class="bg-white w-full hover:bg-steel-blue rounded-b-lg shadow cursor-pointer p-4"
                         >
                             <p class="my-0">No results for <strong>{{ query }}</strong></p>
                         </div>

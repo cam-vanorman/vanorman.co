@@ -32,65 +32,25 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/assets/favicons/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-
+        {{-- Meta --}}
         @stack('meta')
-
-        @if ($page->production)
-
-            @if (getenv('GA_ID'))
-                {{-- Global site tag (gtag.js) - Google Analytics --}}
-                <script async src="https://www.googletagmanager.com/gtag/js?id={{ getenv('GA_ID') }}"></script>
-                <script>
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-
-                  gtag('config', '{{ getenv('GA_ID') }}');
-                </script>
-            @endif
-
-            @if (getenv('RECAPTCHA_SITE_KEY'))
-                {{-- Recaptcha --}}
-                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-            @endif
-        @endif
-    
-        <link href="https://fonts.googleapis.com/css?family=Cabin:300,400,800" rel="stylesheet">
+        {{-- Analytics --}}
+        @include('_components.analytics')
+        <link href="https://fonts.googleapis.com/css?family=Poppins:500,800" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-steel-blue text-grey-darkest leading-normal font-sans">
-        <header class="banner" role="banner">
-            <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
-                <div class="flex items-center">
-                    <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
-                        <h1 class="text-lg md:text-2xl my-0 text-steel-blue hover:text-secondary">{{ $page->siteName }}</h1>
-                    </a>
-                </div>
-
-                <div id="vue-search" class="flex flex-1 justify-end items-center">
-                    <search></search>
-
-                    @include('_nav.menu')
-
-                    @include('_nav.menu-toggle')
-                </div>
-            </div>
-        </header>
-
+        {{-- Main banner --}}
+        @include('_nav.banner')
+        {{-- Responsive menu --}}
         @include('_nav.menu-responsive')
 
         <main role="main" class="main__content">
             @yield('body')
         </main>
-
-        <footer class="bg-tertiary text-white text-center text-sm mt-12 py-4" role="contentinfo">
-            <ul class="flex flex-col md:flex-row justify-center list-reset">
-                <li class="md:mr-2">
-                   {{ $page->siteName }} Website Portfolio
-                </li>
-            </ul>
-        </footer>
+        
+        @include('_footer.footer')
 
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
 

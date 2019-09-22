@@ -8,14 +8,10 @@
 @endpush
 
 @section('body')
-    
-    @if ($page->image)
-        <img src="{{ $page->image }}" alt="{{ $page->title }} cover image" class="mb-2">
-    @endif
 
-    <h1 class="leading-none mb-2">{{ $page->title }}</h1>
+    <h1 class="page__title">{{ $page->title }}</h1>
 
-    <div class="border-b border-blue-lighter mb-10 pb-4" v-pre>
+    <div class="page__content" v-pre>
         @yield('content')
     </div>
 @endsection

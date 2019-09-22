@@ -10,7 +10,12 @@
 @endpush
 
 @section('body')
-<h1 class="my-8 text-center">Contact</h1>
+    <div class="block w-full p-5 mb-3">
+        <div class="section__title">
+            <h4>Try to reduce the Spam, yeah?</h4>
+            <h1 class="leading-none">Contact Me</h1>
+        </div>
+    </div>
 
 <form action="{!! $contact !!}" method="POST" class="mb-12">
     <div class="flex flex-wrap mb-6 -mx-3">

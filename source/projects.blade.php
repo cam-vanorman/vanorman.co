@@ -3,6 +3,13 @@ pagination:
     collection: projects
     perPage: 10
 ---
+@php
+    $title   = ($page->title ?? false);
+    $image   = ($page->image ?? false);
+    $slug    = ($page->slug ? '_pages.' . $page->slug : false);
+    $content = ($page->content ?? false);
+@endphp
+
 @extends('_layouts.master')
 
 @push('meta')
@@ -13,9 +20,14 @@ pagination:
 @endpush
 
 @section('body')
-    <div class="page__content">
-        <h1 class="my-8">Projects</h1>
-        @include('_pages.projects')
+    <div class="block w-full p-5 mb-3">
+        <div class="section__title">
+            <h4>Experience Matters</h4>
+            <h1 class="leading-none">My Recent Work</h1>
+        </div>
+        <div class="page__content">
+            @include('_pages.projects')
+        </div>
     </div>
 
     <div class="cards my-4 justify-around"> 
@@ -38,7 +50,7 @@ pagination:
                 <a
                     href="{{ $path }}"
                     title="Go to Page {{ $pageNumber }}"
-                    class="bg-grey-lighter hover:bg-grey-light text-blue-darker rounded mr-3 px-5 py-3 {{ $pagination->currentPage == $pageNumber ? 'text-blue-dark' : '' }}"
+                    class="bg-grey-lighter hover:bg-grey-light text-tertiary rounded mr-3 px-5 py-3 {{ $pagination->currentPage == $pageNumber ? 'text-blue-dark' : '' }}"
                 >{{ $pageNumber }}</a>
             @endforeach
 

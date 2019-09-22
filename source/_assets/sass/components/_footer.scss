@@ -1,0 +1,62 @@
+.page__footer {
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+  padding-top: 500px;
+  margin-top: -480px;
+
+  @apply items-center justify-center z-0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 600px;
+    height: 2000px;
+    transform: skew(0, -4deg);
+    z-index: -1;
+
+    @apply bg-tertiary;
+  }
+
+  &-text {
+    @apply py-5 px-3 my-5;
+  }
+
+  .menu {
+    @apply list-reset mb-8 block text-center;
+
+    &__title {
+      @apply text-steel-blue text-xl;
+    }
+
+    &__item {
+      @apply mb-3;
+
+      a {
+        @apply text-steel-blue;
+      }
+    }
+  }
+}
+
+.copyright {
+  @apply text-center text-sm text-steel-blue uppercase leading-normal tracking-wide my-5;
+}
+
+@screen sm {
+  .page__footer {
+    &-text {
+      @apply flex;
+    }
+
+    &-logo {
+      @apply w-3/4;
+    }
+
+    .menu {
+      @apply text-left w-1/4;
+    }
+  }
+}

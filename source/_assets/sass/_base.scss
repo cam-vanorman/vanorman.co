@@ -1,16 +1,14 @@
 body {
     font-size: 17px;
 
-    @apply .bg-steel-blue;
+    @apply bg-steel-blue;
 }
 
 a {
-    @apply .font-semibold;
-    @apply .no-underline;
-    @apply .text-secondary;
+    @apply font-normal no-underline text-secondary;
 
     &:hover {
-        @apply .text-tertiary;
+        @apply text-tertiary;
     }
 }
 
@@ -51,51 +49,47 @@ h3,
 h4,
 h5,
 h6 {
-    @apply .leading-tight;
-    @apply .mb-4;
-    @apply .mt-8;
-    @apply .text-tertiary;
+    @apply leading-tight mb-4 mt-8;
 
     &:first-child {
-        @apply .mt-0;
+        @apply mt-0;
     }
 }
 
 h1 {
-    @apply .font-extrabold;
-    @apply .text-5xl;
+    @apply font-extrabold leading-tight text-4xl;
+
+    @screen lg {
+        @apply text-6xl;
+    }
 }
 
 h2 {
-    @apply .font-bold;
-    @apply .text-4xl;
+    @apply font-extrabold text-3xl;
+
+    @screen lg {
+        @apply text-5xl;
+    }
 }
 
 h3 {
-    @apply .font-bold;
-    @apply .text-3xl;
+    @apply font-bold text-xl uppercase;
 }
 
 h4 {
-    @apply .font-normal;
-    @apply .text-2xl;
+    @apply font-medium leading-tight text-lg uppercase;
 }
 
 h5 {
-    @apply .font-normal;
-    @apply .text-xl;
+    @apply font-medium text-lg;
 }
 
 h6 {
-    @apply .font-light;
-    @apply .text-lg;
+    @apply font-medium;
 }
 
 hr {
-    @apply .border-b;
-    @apply .border-tertiary;
-    @apply .my-12;
-    @apply .rounded-full;
+    @apply border-b border-tertiary my-12 rounded-full;
 }
 
 li {
@@ -111,27 +105,18 @@ ul {
 }
 
 p {
-    @apply .my-3;
+    @apply my-3 font-medium;
 
     @screen md {
-        @apply .my-6;
+        @apply my-6;
     }
 }
 
 pre {
-    @apply .bg-grey-lighter;
-    @apply .leading-loose;
-    @apply .my-6;
-    @apply .overflow-x-auto;
-    @apply .p-4;
-    @apply .rounded;
-    @apply .shadow;
-    @apply .text-base;
+    @apply bg-grey-lighter leading-loose my-6 overflow-x-auto p-4 rounded shadow text-base;
 
     code {
-        @apply .bg-transparent;
-        @apply .block;
-        @apply .p-0;
+        @apply bg-transparent block p-0;
     }
 }
 
@@ -140,6 +125,6 @@ img {
 }
 
 ::selection {
-    @apply .bg-primary;
-    @apply .text-white;
-    }
+    @apply bg-primary text-white;
+}
+

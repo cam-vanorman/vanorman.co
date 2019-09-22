@@ -1,3 +1,10 @@
+@php
+    $title   = ($page->title ?? false);
+    $image   = ($page->image ?? false);
+    $slug    = ($page->slug ? '_projects.' . $page->slug : false);
+    $content = ($page->content ?? false);
+@endphp
+
 @extends('_layouts.master')
 
 @push('meta')
@@ -9,14 +16,17 @@
 
 @section('body')
     <div class="page__content">
-        <h1 class="leading-none my-8">{{ $page->title }}</h1>
+        <div class="block w-full p-5 mb-3">
+            <div class="section__title">
+                <h1 class="leading-none">{{ $title }}</h1>
+            </div>
+        </div>
         
-        @if ($page->image)
-            <img src="{{ $page->image }}" alt="{{ $page->title }} cover image" class="mb-2">
+        @if ($image)
+            <img class="hidden sm:block" src="{{ $image }}" alt="{{ $title }} cover image" class="mb-2">
         @endif
         
-
-        @yield('content')
+        @include($slug)
 
         <div class="block text-center my-8">
             <a href="{{ $page->url }}" rel="nofollow noopener" target="_blank" class="block btn btn--primary">Visit Live Site</a>

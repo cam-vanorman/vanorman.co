@@ -1,18 +1,17 @@
 .btn {
-  cursor: pointer;
   transition: 0.2s ease;
 
-  @apply bg-tertiary shadow-md rounded my-3 px-4 py-3 text-white leading-none uppercase tracking-wide;
+  @apply font-extrabold bg-secondary text-steel-blue rounded cursor-pointer my-3 px-6 py-4 leading-none uppercase tracking-wide shadow-lg ;
 
   &:hover {
-    @apply bg-white text-tertiary shadow;
+    @apply bg-tertiary text-steel-blue shadow;
   }
 
   &--primary {
-    @apply bg-primary;
+    @apply bg-tertiary text-steel-blue;
 
     &:hover {
-      @apply bg-white text-primary;
+      @apply bg-secondary text-steel-blue;
     }
   }
 }

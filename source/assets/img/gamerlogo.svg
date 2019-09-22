@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="327px" height="327px" viewBox="0 0 327 327" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #4D8AF0;">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#4D8AF0" x="0" y="0" width="327" height="327"></rect>
+        <rect id="Rectangle" x="0" y="0" width="327" height="327"></rect>
+        <rect id="Rectangle" fill="#D6D6D6" x="65" y="65" width="197" height="197"></rect>
+        <rect id="Rectangle" fill="#4D8AF0" x="0" y="164" width="163" height="163"></rect>
+        <rect id="Rectangle" fill="#4D8AF0" x="163" y="0" width="164" height="164"></rect>
+        <rect id="Rectangle" fill="#4D8AF0" transform="translate(163.500000, 163.500000) rotate(45.000000) translate(-163.500000, -163.500000) " x="94" y="94" width="139" height="139"></rect>
+        <g id="Keyboard-and-Mouse" transform="translate(163.000000, 0.000000)">
+            <rect id="Rectangle" fill="#282731" fill-rule="evenodd" x="0" y="0" width="164" height="164"></rect>
+            <path d="M120.459596,27.0398569 C118.250457,27.0398569 116.459596,28.8307179 116.459596,31.0398569 L116.459596,46.8883417 C116.459596,49.0974807 118.250457,50.8883417 120.459596,50.8883417 L126.368687,50.8883417 C128.577826,50.8883417 130.368687,49.0974807 130.368687,46.8883417 L130.368687,31.0398569 C130.368687,28.8307179 128.577826,27.0398569 126.368687,27.0398569 L120.459596,27.0398569 Z" id="Rectangle" stroke="#4D8AF0" stroke-width="1" fill="#D6D6D6" fill-rule="evenodd" transform="translate(123.414141, 38.964099) rotate(-44.000000) translate(-123.414141, -38.964099) "></path>
+            <g id="keyboard-icon" transform="translate(26.505051, 39.792382)" stroke="#4D8AF0" stroke-width="1">
+                <path d="M0.5,29.3063975 L0.5,68.2800817 L97.5,68.2800817 L97.5,29.3063975 L0.5,29.3063975 Z" id="Rectangle" fill="#282731" fill-rule="evenodd" transform="translate(49.000000, 48.793240) rotate(-45.000000) translate(-49.000000, -48.793240) "></path>
+                <path d="M5.65789474,39.6221869 L5.65789474,68.2800817 L77.3675722,68.2800817 L77.3675722,39.6221869 L5.65789474,39.6221869 Z" id="Rectangle" fill="#D8D8D8" fill-rule="evenodd" transform="translate(41.512733, 53.951134) rotate(-45.000000) translate(-41.512733, -53.951134) "></path>
+                <path d="M18.5526316,66.7011343 L18.5526316,69.5695554 L62.6842105,69.5695554 L62.6842105,66.7011343 L18.5526316,66.7011343 Z" id="Rectangle" fill="#4D8AF0" fill-rule="evenodd" transform="translate(40.618421, 68.135345) rotate(-45.000000) translate(-40.618421, -68.135345) "></path>
+                <path d="M66.305973,6.94736842 L66.305973,35.6052632 L82.0691309,35.6052632 L82.0691309,6.94736842 L66.305973,6.94736842 Z" id="Rectangle" fill="#D6D6D6" fill-rule="evenodd" transform="translate(74.187552, 21.276316) rotate(-45.000000) translate(-74.187552, -21.276316) "></path>
+                <path d="M86.2199974,22.5337685 L75.4342105,33.3195554" id="Line" stroke-linecap="square"></path>
+                <path d="M72.9155224,9.2292935 L62.1297355,20.0150804" id="Line" stroke-linecap="square"></path>
+                <path d="M60.0207855,22.1240303 L9.62845634,72.5163596" id="Line" stroke-linecap="square"></path>
+            </g>
+        </g>
+        <g id="Dice" transform="translate(0.000000, 164.000000)">
+            <rect id="Rectangle" fill="#282731" x="0" y="0" width="163" height="163"></rect>
+            <circle id="Oval" fill="#D8D8D8" cx="126.777778" cy="36.2222222" r="19.7575758"></circle>
+            <circle id="Oval" fill="#D8D8D8" cx="36.2222222" cy="126.777778" r="19.7575758"></circle>
+        </g>
+        <rect id="Rectangle" fill="#4D8AF0" x="228" y="228" width="99" height="99"></rect>
+        <rect id="Rectangle" fill="#4D8AF0" x="0" y="0" width="99" height="99"></rect>
+    </g>
+</svg>

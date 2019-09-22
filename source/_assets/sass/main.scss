@@ -3,7 +3,7 @@
 
 // Code syntax highlighting,
 // powered by https://highlightjs.org
-@import '~highlight.js/styles/a11y-light.css';
+/* @import '~highlight.js/styles/a11y-light.css'; */
 
 @import 'base';
 @import 'content';
@@ -12,6 +12,7 @@
 @import 'projects';
 
 @import 'components/header';
+@import 'components/footer';
 @import 'components/card';
 @import 'components/button';
 @import 'components/form';
