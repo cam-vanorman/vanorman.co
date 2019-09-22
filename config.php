@@ -32,7 +32,7 @@ return [
      * Helper methods
      */
     'tags' => function ($page) {
-        return explode(', ', $page->tag);
+        return explode(', ', $page->builtWith);
     },
 
     'isActive' => function ($page, $path) {
