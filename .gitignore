@@ -1,4 +1,5 @@
 .env
+/sources/assets/build/
 /source/_pages/*
 /source/_projects/*
 !/source/_pages/
