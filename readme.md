@@ -2,9 +2,11 @@
 
 This is a starter template for freelancers wanting to showcase projects/work. It's based on [Tighten.co's Jigsaw blog template.](http://jigsaw-blog-staging.tighten.co/)
 
-While the template was initially purposed for static content, this starterThis starter allows you to connect with your [contentful account](contentful.com). I'm currently using the free tier.
+While the template was initially purposed for static content, this starter allows you to connect with your [contentful account](contentful.com). I'm currently using the free tier to manage content (mostly) and pages.
 
-Additionally this template uses [FieldGoal](https://fieldgoal.io) to manage forms on the front-end (without exposing my password). As well, each form has reCaptchav2 enabled to prevent bot shenanigans from abusing your beautiful website.
+Additionally this template uses [FieldGoal](https://fieldgoal.io) to manage forms on the front-end. As well, each form has reCaptchav2 enabled to prevent bot shenanigans from abusing your beautiful website.
+
+Some basic variables are available in the `.env.example` file, though feel free to use your own or none.
 
 ## Installation
 
