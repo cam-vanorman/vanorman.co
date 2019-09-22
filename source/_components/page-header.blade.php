@@ -14,7 +14,7 @@
     @endif
   </div>
   @if ($image)
-    <div class="page__header-image hidden sm:block">
+    <div class="page__header-image hidden lg:block">
         <img src="{{ $image }}" alt="{{ $title }} Image">
         <h3 class="hidden sr-only">{{ $title }}</h3>
     </div>
