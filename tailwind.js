@@ -245,8 +245,8 @@ textSizes: {
   '2xl': '1.5rem',
   '3xl': '1.75rem',
   '4xl': '2.125rem',
-  '5xl': '3.25rem',
-  '6xl': '5rem',
+  '5xl': '2.75rem',
+  '6xl': '4rem',
 },
 
 
@@ -522,6 +522,7 @@ height: {
   '48': '12rem',
   '64': '16rem',
   'full': '100%',
+  'half': '50vh',
   'screen': '100vh'
 },
 

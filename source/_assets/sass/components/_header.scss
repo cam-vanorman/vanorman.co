@@ -3,7 +3,7 @@
   height: 3.5rem;
   transition: all 0.3s;
 
-  @apply flex items-center shadow-lg bg-tertiary border-b h-16 py-4;
+  @apply flex items-center content-start shadow-lg bg-tertiary h-16 py-4;
 
   &--active {
     position: fixed;

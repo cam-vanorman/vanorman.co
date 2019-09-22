@@ -1,12 +1,12 @@
 .main__content {
-  @apply flex-auto w-full mt-3 max-w-xl mx-auto py-8 px-3 z-10;
+  @apply flex-auto w-full z-10;
+}
 
-  @screen sm {
-    @apply mt-16;
-  }
+.page__hero {
+  @apply flex justify-center items-center h-half bg-tertiary text-steel-blue;
 
-  img {
-    @apply mx-auto my-3 shadow-lg rounded;
+  &-title {
+    @apply max-w-lg text-center;
   }
 }
 
@@ -14,14 +14,14 @@
   @apply flex justify-center p-0;
 
   @screen sm {
-    @apply px-6;
+    @apply mt-6;
   }
 
   &-content {
     @apply flex flex-col w-full h-full p-4 z-10 bg-white shadow-lg rounded;
 
     @screen md {
-      @apply w-4/5 p-8;
+      @apply w-4/5 p-6;
     }
 
     @screen lg {
@@ -30,6 +30,10 @@
   }
   &-image {
     @apply hidden flex-col w-2/3 -ml-10 mt-5 p-0 justify-center items-center select-none z-0;
+
+    img {
+      @apply shadow-lg rounded block mx-auto;
+    }
 
     @screen lg {
       @apply mt-16;
@@ -42,7 +46,7 @@
 }
 
 .page__content {
-  @apply mb-8 mx-auto;
+  @apply mt-6 mb-8 max-w-lg mx-auto py-8;
 
   h1,
   h2,

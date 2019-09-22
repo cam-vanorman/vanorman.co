@@ -3,6 +3,7 @@
     $image   = ($page->image ?? false);
     $slug    = ($page->slug ? '_projects.' . $page->slug : false);
     $content = ($page->content ?? false);
+    $tags    = ($page->tags() ?? false);
 @endphp
 
 @extends('_layouts.master')
@@ -15,21 +16,22 @@
 @endpush
 
 @section('body')
-    <div class="page__content">
-        <div class="block w-full p-5 mb-3">
-            <div class="section__title">
-                <h1 class="leading-none">{{ $title }}</h1>
-            </div>
+    <div class="page__hero">
+        <div class="w-full block text-center mb-5">
+            <h1 class="leading-none page__hero-title mx-auto mb-5">{{ $title }}</h1>
+            <a href="{{ $page->url }}" rel="nofollow noopener" target="_blank" class="inline-block hover:text-steel-blue">Visit Live Site &RightArrow;</a>
         </div>
+    </div>
+    <div class="-mt-32 bg-white p-0 rounded shadow-lg page__content">
         
         @if ($image)
-            <img class="hidden sm:block" src="{{ $image }}" alt="{{ $title }} cover image" class="mb-2">
+            <img class="mx-auto hidden sm:block" src="{{ $image }}" alt="{{ $title }} cover image" class="mb-2">
         @endif
         
-        @include($slug)
+        <div class="px-8 py-8 page__content-text">
+            @include('_components.tags', ['tags' => $tags])
 
-        <div class="block text-center my-8">
-            <a href="{{ $page->url }}" rel="nofollow noopener" target="_blank" class="block btn btn--primary">Visit Live Site</a>
+            @include($slug)
         </div>
     </div>
 {{-- 

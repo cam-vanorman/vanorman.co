@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div class="w-full p-5 mb-3">
+    <div class="block w-full container p-5 mb-3">
         <div class="section__title">
             <h4>Experience Matters</h4>
             <h2>My Recent Work</h2>

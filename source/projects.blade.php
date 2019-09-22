@@ -20,7 +20,7 @@ pagination:
 @endpush
 
 @section('body')
-    <div class="block w-full p-5 mb-3">
+    <div class="block w-full p-5 mb-3 mt-12 container">
         <div class="section__title">
             <h4>Experience Matters</h4>
             <h1 class="leading-none">My Recent Work</h1>
@@ -30,7 +30,7 @@ pagination:
         </div>
     </div>
 
-    <div class="cards my-4 justify-around"> 
+    <div class="cards my-4 justify-around container"> 
         @foreach ($pagination->items as $project)
             @include('_components.project-preview-inline')
         @endforeach
