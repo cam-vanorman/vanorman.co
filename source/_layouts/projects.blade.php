@@ -25,7 +25,7 @@
     <div class="md:-mt-32 bg-white p-0 rounded shadow-lg page__content">
         
         @if ($image)
-            <img class="mx-auto hidden sm:block" src="{{ $image }}" alt="{{ $title }} cover image" class="mb-2">
+            <img class="mx-auto hidden rounded sm:block" src="{{ $image }}" alt="{{ $title }} cover image" class="mb-2">
         @endif
         
         <div class="px-8 py-8 page__content-text">
