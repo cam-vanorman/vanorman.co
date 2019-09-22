@@ -199,29 +199,10 @@ screens: {
 
 fonts: {
   'sans': [
-    'Cabin',
-    'system-ui',
-    'BlinkMacSystemFont',
-    '-apple-system',
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
+    'Poppins',
     'sans-serif',
   ],
   'serif': [
-    'Constantia',
-    'Lucida Bright',
-    'Lucidabright',
-    'Lucida Serif',
-    'Lucida',
-    'DejaVu Serif',
-    'Bitstream Vera Serif',
-    'Liberation Serif',
     'Georgia',
     'serif',
   ],
@@ -264,8 +245,8 @@ textSizes: {
   '2xl': '1.5rem',
   '3xl': '1.75rem',
   '4xl': '2.125rem',
-  '5xl': '2.625rem',
-  '6xl': '10rem',
+  '5xl': '3.25rem',
+  '6xl': '5rem',
 },
 
 
@@ -940,8 +921,8 @@ modules: {
 
 plugins: [
   require('tailwindcss/plugins/container')({
-    // center: true,
-    // padding: '1rem',
+    center: true,
+    padding: '1rem',
   }),
   function({ addUtilities }) {
       const newUtilities = {
