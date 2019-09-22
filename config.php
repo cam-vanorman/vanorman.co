@@ -6,6 +6,8 @@ return [
     'siteName' => getenv('SITE_NAME'),
     'siteDescription' => getenv('SITE_DESCRIPTION'),
     'siteAuthor' => getenv('SITE_AUTHOR'),
+    'siteLogo' => getenv('SITE_LOGO'),
+    'siteRole' => getenv('SITE_ROLE'),
 
     // collections
     'collections' => [
@@ -33,7 +35,6 @@ return [
         return explode(', ', $page->tag);
     },
 
-    // helpers
     'isActive' => function ($page, $path) {
         return ends_with(trimPath($page->getPath()), trimPath($path));
     },
