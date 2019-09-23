@@ -3,7 +3,7 @@
 @section('body')
     <div class="page__hero">
         <div class="page__hero-wrap">
-            <h4 class="page__hero-subtitle">{{ $page->siteRole }}</h4>
+            <h4 class="page__hero-subtitle">{{ $page->siteDescription }}</h4>
             <h1 class="page__hero-title">{{ $page->siteName }}</h1>
         </div>
     </div>
