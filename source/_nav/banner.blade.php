@@ -2,7 +2,7 @@
     <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
         <div class="flex items-center">
             <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
-                <h1 class="banner__title">{{ $page->siteName }}</h1>
+                <span class="banner__title">{{ $page->siteName }}</span>
             </a>
         </div>
 

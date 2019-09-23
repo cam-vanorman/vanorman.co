@@ -11,12 +11,12 @@
 
 @section('body')
     <div class="page__hero">
-        <div class="w-full block text-center mb-5">
-            <h1 class="leading-none page__hero-title mx-auto mb-1 mt-0">Contact Me</h1>
-            <h4 class="m-0 text-secondary">Leave a message, keep your spam</h4>
+        <div class="page__hero-wrap">
+            <h4 class="page__hero-subtitle">Leave a message, keep your spam</h4>
+            <h1 class="page__hero-title">Contact Me</h1>
         </div>
     </div>
-    <div class="md:-mt-20 bg-white px-8 mb-12 text-center rounded shadow-lg page__content">
+    <div class="md:-mt-20 bg-white px-8 mb-12 rounded shadow-lg page__content">
 
     <form action="{!! $contact !!}" method="POST" class="mb-12 mt-3 max-w-xl mx-auto py-8 px-3">
         <div class="flex flex-wrap mb-6 -mx-3">

@@ -1,9 +1,10 @@
 @php
-    $title   = ($page->title ?? false);
-    $image   = ($page->image ?? false);
-    $slug    = ($page->slug ? '_projects.' . $page->slug : false);
-    $content = ($page->content ?? false);
-    $tags    = ($page->tags() ?? false);
+    $title    = ($page->title ?? false);
+    $image    = ($page->image ?? false);
+    $slug     = ($page->slug ? '_projects.' . $page->slug : false);
+    $content  = ($page->content ?? false);
+    $tags     = ($page->tags() ?? false);
+    $launched = ($page->launched ? 'Launched in ' . date('F Y', $page->launched) : false);
 @endphp
 
 @extends('_layouts.master')
@@ -17,8 +18,9 @@
 
 @section('body')
     <div class="page__hero">
-        <div class="w-full block text-center mb-5">
-            <h1 class="leading-none page__hero-title mx-auto mb-5">{{ $title }}</h1>
+        <div class="page__hero-wrap">
+            <h4 class="page__hero-subtitle">{{ $launched }}</h4>
+            <h1 class="page__hero-title mb-5">{{ $title }}</h1>
             <a href="{{ $page->url }}" rel="nofollow noopener" target="_blank" class="inline-block hover:text-steel-blue">Visit Live Site &RightArrow;</a>
         </div>
     </div>

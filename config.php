@@ -13,7 +13,7 @@ return [
     'collections' => [
         'projects' => [
             'content_model' => 'projects',
-            'sort' => '-publishDate',
+            'sort' => '-launched',
             'path' => 'project/{filename}',
         ],
         'pages' => [

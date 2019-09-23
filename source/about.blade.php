@@ -9,9 +9,9 @@
 
 @section('body')
     <div class="page__hero">
-        <div class="w-full block text-center mb-5">
-            <h4 class="text-secondary mt-0 mb-1">FOCUSED AND DYNAMIC</h4>
-            <h1 class="leading-none page__hero-title mx-auto mb-0 mt-0">About Me</h1>
+        <div class="page__hero-wrap">
+            <h4 class="page__hero-subtitle">Focused and Dynamic</h4>
+            <h1 class="page__hero-title">About Me</h1>
         </div>
     </div>
     <div class="md:-mt-20 p-0 page__content">
