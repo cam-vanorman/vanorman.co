@@ -21,7 +21,6 @@
         <img
           class="logo__image mx-auto mb-10 sm:m-0"
           src="{{ $page->siteLogo }}"
-          width="200"
           alt="{{ $page->siteName }}">
       </div>
       <nav class="menu">

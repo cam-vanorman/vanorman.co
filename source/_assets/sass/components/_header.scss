@@ -18,10 +18,6 @@
   }
 }
 
-.admin-bar .banner--active {
-  top: 32px;
-}
-
 .logo {
   @apply flex items-center flex-no-shrink mr-6;
 
@@ -36,7 +32,7 @@
   }
 
   &__image {
-    width: 200px;
+    width: 100px;
     vertical-align: middle;
 
     @apply fill-current;
@@ -59,56 +55,6 @@
   .banner--active & {
     @apply text-primary;
   }
-}
-
-.menu__icon {
-  position: relative;
-  vertical-align: middle;
-
-  @apply fill-current text-primary h-5 w-5;
-
-  .banner--active & {
-    @apply text-primary;
-  }
-
-  /* Animate menu icon (bars). */
-  .bar {
-    position: relative;
-    opacity: 1;
-    transform: rotate(0) translateY(0) translateX(0);
-    transform-origin: 1em 1em;
-    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
-
-    &__1 {
-      transform-origin: 5px 5px;
-    }
-
-    &__3 {
-      transform-origin: 2px 8px;
-    }
-  }
-
-  &.opened {
-    .bar {
-      &__1 {
-        transform: rotate(45deg) translateY(0) translateX(0);
-      }
-
-      &__2 {
-        opacity: 0;
-      }
-
-      &__3 {
-        transform: rotate(-45deg) translateY(0) translateX(0);
-      }
-    }
-  }
-}
-
-.menu__title {
-  vertical-align: middle;
-
-  @apply uppercase text-sm;
 }
 
 .menu__items {
