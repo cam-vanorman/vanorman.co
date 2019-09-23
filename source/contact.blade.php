@@ -10,12 +10,13 @@
 @endpush
 
 @section('body')
-    <div class="block w-full p-5 mb-3 mt-12 container">
-        <div class="section__title">
-            <h4>Try to reduce the Spam, yeah?</h4>
-            <h1 class="leading-none">Contact Me</h1>
+    <div class="page__hero">
+        <div class="w-full block text-center mb-5">
+            <h1 class="leading-none page__hero-title mx-auto mb-1 mt-0">Contact Me</h1>
+            <h4 class="m-0 text-secondary">Leave a message, keep your spam</h4>
         </div>
     </div>
+    <div class="md:-mt-20 bg-white px-8 mb-12 text-center rounded shadow-lg page__content">
 
     <form action="{!! $contact !!}" method="POST" class="mb-12 mt-3 max-w-xl mx-auto py-8 px-3">
         <div class="flex flex-wrap mb-6 -mx-3">

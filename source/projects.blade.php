@@ -20,7 +20,7 @@ pagination:
 @endpush
 
 @section('body')
-    <div class="block w-full p-5 mb-3 mt-12 container">
+{{--     <div class="block w-full p-5 mb-3 mt-12 container">
         <div class="section__title">
             <h4>Experience Matters</h4>
             <h1 class="leading-none">My Recent Work</h1>
@@ -28,6 +28,16 @@ pagination:
         <div class="page__content">
             @include('_pages.projects')
         </div>
+    </div> --}}
+
+    <div class="page__hero">
+        <div class="w-full block text-center mb-5">
+            <h4 class="mb-1 text-secondary">Experience Matters</h4>
+            <h1 class="leading-none page__hero-title mx-auto mb-5 mt-0">My Recent Work</h1>
+        </div>
+    </div>
+    <div class="md:-mt-20 bg-white px-8 mb-12 text-center rounded shadow-lg page__content">
+        @include('_pages.projects')
     </div>
 
     <div class="cards my-4 justify-around container"> 

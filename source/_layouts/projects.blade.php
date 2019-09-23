@@ -22,7 +22,7 @@
             <a href="{{ $page->url }}" rel="nofollow noopener" target="_blank" class="inline-block hover:text-steel-blue">Visit Live Site &RightArrow;</a>
         </div>
     </div>
-    <div class="md:-mt-32 bg-white p-0 rounded shadow-lg page__content">
+    <div class="md:-mt-20 bg-white p-0 rounded shadow-lg page__content">
         
         @if ($image)
             <a href="{{ $page->url }}" class="block" rel="nofollow noopener" target="_blank">

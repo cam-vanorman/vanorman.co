@@ -36,7 +36,7 @@
     }
 
     @screen lg {
-      @apply mt-16;
+      @apply mt-28;
     }
 
     @screen md {
@@ -46,7 +46,7 @@
 }
 
 .page__content {
-  @apply mt-6 mb-8 max-w-lg mx-auto py-8;
+  @apply mb-8 max-w-lg mx-auto py-4;
 
   h1,
   h2,
