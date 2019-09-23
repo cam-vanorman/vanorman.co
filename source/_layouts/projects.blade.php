@@ -25,7 +25,9 @@
     <div class="md:-mt-32 bg-white p-0 rounded shadow-lg page__content">
         
         @if ($image)
-            <img class="mx-auto hidden rounded sm:block" src="{{ $image }}" alt="{{ $title }} cover image" class="mb-2">
+            <a href="{{ $page->url }}" class="block" rel="nofollow noopener" target="_blank">
+                <img class="mx-auto hidden rounded sm:block" src="{{ $image }}" alt="{{ $title }} cover image" class="mb-2">
+            </a>
         @endif
         
         <div class="px-8 py-8 page__content-text">
@@ -34,11 +36,11 @@
             @include($slug)
         </div>
     </div>
-{{-- 
-    <nav class="flex justify-between md:text-base">
+
+    <nav class="flex justify-between container md:text-base">
         <div>
             @if ($next = $page->getNext())
-                <a class="text-lg" href="{{ $next->getUrl() }}" title="Older Project: {{ $next->title }}">
+                <a class="text-lg p-3" href="{{ $next->getUrl() }}" title="Older Project: {{ $next->title }}">
                     &LeftArrow; {{ $next->title }}
                 </a>
             @endif
@@ -46,10 +48,10 @@
 
         <div>
             @if ($previous = $page->getPrevious())
-                <a class="text-lg" href="{{ $previous->getUrl() }}" title="Newer Project: {{ $previous->title }}">
+                <a class="text-lg p-3" href="{{ $previous->getUrl() }}" title="Newer Project: {{ $previous->title }}">
                     {{ $previous->title }} &RightArrow;
                 </a>
             @endif
         </div>
-    </nav> --}}
+    </nav>
 @endsection
