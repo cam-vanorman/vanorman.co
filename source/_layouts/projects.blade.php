@@ -24,7 +24,7 @@
             <a href="{{ $page->url }}" rel="nofollow noopener" target="_blank" class="inline-block hover:text-steel-blue">Visit Live Site &RightArrow;</a>
         </div>
     </div>
-    <div class="md:-mt-20 bg-white p-0 rounded shadow-lg page__content">
+    <div class="lg:-mt-20 bg-white p-0 rounded shadow-lg page__content">
         
         @if ($image)
             <a href="{{ $page->url }}" class="block" rel="nofollow noopener" target="_blank">
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <nav class="flex justify-between container md:text-base">
+    <nav class="flex justify-between text-center items-center container md:text-base">
         <div>
             @if ($next = $page->getNext())
                 <a class="text-lg p-3" href="{{ $next->getUrl() }}" title="Older Project: {{ $next->title }}">

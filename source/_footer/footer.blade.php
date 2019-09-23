@@ -1,18 +1,25 @@
 <footer class="page__footer">
   <div class="page__footer-text">
     <div class="container cards">
-      <div class="card">
-        <a href="/contact">
-          <div class="card__body">
-            <h3 class="card__title">
-              Need an experienced {{ $page->siteRole }}?
-            </h3>
-            <p class="card__text">
-              Send me a message!
-            </p>
-          </div>
-        </a>
-      </div>
+      @if($page->getPath() !== '/contact')
+        {{-- To-DO: Build into contentful --}}
+        @php
+          $cta_title   = 'Need an experienced ' . $page->siteRole . '?';
+          $cta_message = "Let's connect!";
+          $cta_link    = "/contact";
+        @endphp
+
+        @include('_components.cta', ['title' => $cta_title, 'message' => $cta_message, 'link' => $cta_link])
+      @else
+        {{-- To-DO: Build into contentful --}}
+        @php
+          $cta_title   = "Not ready to contact me just yet?";
+          $cta_message = "Browse my recent work";
+          $cta_link    = "/projects";
+        @endphp
+        @include('_components.cta', ['title' => $cta_title, 'message' => $cta_message, 'link' => $cta_link])
+      @endif
+
     </div>
   </div>
   <div class="page__footer-text">
