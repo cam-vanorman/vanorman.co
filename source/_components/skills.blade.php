@@ -1,6 +1,6 @@
 @foreach ($skill as $type)
-    <div class="w-full mb-4 sm:mb-8">
+    <div class="w-full mb-4 sm:mb-6">
         <h3>{{ $type->title }}</h3>
-        {{ $type->skills }}
+        <p>{{ $type->skills }}</p>
     </div>
 @endforeach
