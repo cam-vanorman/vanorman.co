@@ -2,6 +2,8 @@
 /source/assets/build/*
 /source/_pages/*
 /source/_projects/*
+/source/_skill/*
+!/source/_skill/
 !/source/_pages/
 !/source/_projects/
 /build_local/
