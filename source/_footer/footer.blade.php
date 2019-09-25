@@ -32,18 +32,20 @@
       </div>
       <nav class="menu">
         <h3 class="menu__title">Around the site</h3>
-        <li class="menu__item">
-          <a title="{{ $page->siteName }} Projects" href="/projects"
-              class="text-steel-blue hover:text-secondary">
-              Projects
-          </a>
-        </li>
-        <li class="menu__item">
-          <a title="{{ $page->siteName }} Contact" href="/contact"
-              class="text-steel-blue hover:text-secondary">
-              Contact
-          </a>
-        </li>
+        <ul class="m-0 list-reset">
+          <li class="menu__item">
+            <a title="{{ $page->siteName }} Projects" href="/projects"
+                class="text-steel-blue hover:text-secondary">
+                Projects
+            </a>
+          </li>
+          <li class="menu__item">
+            <a title="{{ $page->siteName }} Contact" href="/contact"
+                class="text-steel-blue hover:text-secondary">
+                Contact
+            </a>
+          </li>
+        </ul>
       </nav>
     </div>   
   </div>
