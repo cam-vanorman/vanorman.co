@@ -22,15 +22,14 @@ pagination:
 @section('body')
     <div class="page__hero">
         <div class="page__hero-wrap">
-            <h4 class="page__hero-subtitle">Experience Matters</h4>
             <h1 class="page__hero-title">My Recent Work</h1>
         </div>
     </div>
-    <div class="md:-mt-20 bg-white px-8 mb-12 text-center rounded shadow-lg page__content">
+    <div class="md:-mt-16 bg-white px-8 mb-12 text-center rounded shadow-lg page__content">
         @include('_pages.projects')
     </div>
 
-    <div class="cards my-4 justify-around container"> 
+    <div class="cards my-4 justify-around container">
         @foreach ($pagination->items as $project)
             @include('_components.project-preview-inline')
         @endforeach

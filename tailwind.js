@@ -522,6 +522,7 @@ height: {
   '48': '12rem',
   '64': '16rem',
   'full': '100%',
+  '35vh': '35vh',
   'half': '50vh',
   'screen': '100vh'
 },
@@ -613,6 +614,7 @@ maxWidth: {
 */
 
 maxHeight: {
+  'xs': '5rem',
   'full': '100%',
   'screen': '100vh',
 },

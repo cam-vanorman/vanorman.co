@@ -4,7 +4,7 @@
     $slug     = ($page->slug ? '_projects.' . $page->slug : false);
     $content  = ($page->content ?? false);
     $tags     = ($page->tags() ?? false);
-    $launched = ($page->launched ? 'Launched in ' . date('F Y', $page->launched) : false);
+    $launched = ($page->launched ? date('F Y', $page->launched) : false);
 @endphp
 
 @extends('_layouts.master')
@@ -19,12 +19,12 @@
 @section('body')
     <div class="page__hero">
         <div class="page__hero-wrap">
-            <h4 class="page__hero-subtitle">{{ $launched }}</h4>
-            <h1 class="page__hero-title mb-5">{{ $title }}</h1>
+            <h4 class="page__hero-subtitle mb-1">{{ $launched }}</h4>
+            <h1 class="page__hero-title mb-1">{{ $title }}</h1>
             <a href="{{ $page->url }}" rel="nofollow noopener" target="_blank" class="inline-block hover:text-steel-blue">Visit Live Site &RightArrow;</a>
         </div>
     </div>
-    <div class="lg:-mt-20 bg-white p-0 rounded shadow-lg page__content">
+    <div class="lg:-mt-16 bg-white p-0 rounded shadow-lg page__content">
         
         @if ($image)
             <a href="{{ $page->url }}" class="block" rel="nofollow noopener" target="_blank">
@@ -33,9 +33,10 @@
         @endif
         
         <div class="px-8 py-8 page__content-text">
-            @include('_components.tags', ['tags' => $tags])
-
             @include($slug)
+
+            <h3 class="text-center">Built With</h3>
+            @include('_components.tags', ['tags' => $tags])
         </div>
     </div>
 

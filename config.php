@@ -21,6 +21,13 @@ return [
             'sort' => '-publishDate',
             'path' => '{filename}',
         ],
+        'skill' => [
+            'content_model' => 'skill',
+            'sort' => 'title',
+        ],
+        'content' => [
+            'content_model' => 'content',
+        ],
     ],
 
     'contentful' => [
@@ -33,6 +40,10 @@ return [
      */
     'tags' => function ($page) {
         return explode(', ', $page->builtWith);
+    },
+
+    'skills' => function ($page) {
+        return explode(', ', $page->skills);
     },
 
     'isActive' => function ($page, $path) {

@@ -33,12 +33,6 @@
       <nav class="menu">
         <h3 class="menu__title">Around the site</h3>
         <li class="menu__item">
-          <a title="{{ $page->siteName }} About" href="/about"
-              class="text-steel-blue hover:text-secondary">
-              About
-          </a>
-        </li>
-        <li class="menu__item">
           <a title="{{ $page->siteName }} Projects" href="/projects"
               class="text-steel-blue hover:text-secondary">
               Projects
@@ -55,6 +49,6 @@
   </div>
   <div class="copyright">
     <p class="mb-0">&copy; 2018-{{ date('Y') }} {{ $page->siteName }}</p>
-    <p class="mt-1 text-xs">{{ $page->siteDescription }}</p>
+    <p class="mt-5 mx-auto text-xs text-grey-dark max-w-sm">{{ $page->siteDescription }}</p>
   </div>
 </footer>

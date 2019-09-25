@@ -42,7 +42,7 @@
 }
 
 .copyright {
-  @apply text-center text-sm text-steel-blue uppercase leading-normal tracking-wide my-5;
+  @apply text-center text-sm text-steel-blue capitalize leading-normal tracking-wide my-5;
 }
 
 @screen sm {

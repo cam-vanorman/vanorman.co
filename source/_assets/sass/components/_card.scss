@@ -5,10 +5,38 @@
 .card {
   transition: all 0.2s linear;
 
-  @apply rounded shadow-lg bg-white mb-5 mx-auto p-0;
+  @apply relative rounded shadow-lg bg-white mb-5 mx-auto p-0;
 
   &:hover {
     @apply shadow bg-tertiary text-steel-blue #{!important};
+  }
+
+  &__hover {
+    
+    &:hover {
+      @apply bg-transparent;
+
+      .card__body {
+        @apply bg-transparent opacity-0;
+      }
+
+      img {
+        @apply block opacity-100;
+      }
+    }
+
+    img {
+      @apply absolute pin-t pin-b pin-l pin-r hidden opacity-0;
+    }
+
+    .card__img { 
+      max-width: 12rem;
+    }
+
+    .card__body {
+      @apply bg-white rounded;
+    }
+
   }
 
   &__body {
