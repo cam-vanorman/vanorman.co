@@ -2,13 +2,6 @@
     <ul class="list-reset my-0">
         <li class="pl-4">
             <a
-                title="{{ $page->siteName }} About"
-                href="/about"
-                class="nav-menu__item hover:text-secondary"
-            >About</a>
-        </li>
-        <li class="pl-4">
-            <a
                 title="{{ $page->siteName }} Projects"
                 href="/projects"
                 class="nav-menu__item hover:text-secondary"

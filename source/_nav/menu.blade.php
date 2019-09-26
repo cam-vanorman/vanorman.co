@@ -3,8 +3,10 @@
         class="ml-6 text-steel-blue hover:text-secondary">
         Projects
     </a>
+
     <a title="{{ $page->siteName }} Contact" href="/contact"
         class="ml-6 text-steel-blue hover:text-secondary">
         Contact
     </a>
+
 </nav>

@@ -10,7 +10,11 @@
   }
 
   &-wrap {
-    @apply w-full block text-center mb-16;
+    @apply w-full block text-center mb-4;
+
+    @screen sm {
+      @apply mb-16;
+    }
 
     a:hover {
       @apply text-steel-blue;

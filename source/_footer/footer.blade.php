@@ -25,10 +25,12 @@
   <div class="page__footer-text">
     <div class="container cards">
       <div class="page__footer-logo">
-        <img
-          class="logo__image mx-auto mb-10 sm:m-0"
-          src="{{ $page->siteLogo }}"
-          alt="{{ $page->siteName }}">
+        <a class="inline-block" href="/">
+          <img
+            class="logo__image mx-auto mb-10 sm:m-0"
+            src="{{ $page->siteLogo }}"
+            alt="{{ $page->siteName }}">
+        </a>
       </div>
       <nav class="menu">
         <h3 class="menu__title">Around the site</h3>

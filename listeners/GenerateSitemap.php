@@ -13,6 +13,7 @@ class GenerateSitemap
         '*/404*',
         '/content/*',
         '/skill/*',
+        '/about',
         '/skills'
     ];
 
