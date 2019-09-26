@@ -51,6 +51,6 @@
   </div>
   <div class="copyright">
     <p class="mb-0">&copy; 2018-{{ date('Y') }} {{ $page->siteName }}</p>
-    <p class="mt-5 mx-auto text-xs text-grey-dark max-w-sm">{{ $page->siteDescription }}</p>
+    <p class="mt-3 mx-auto text-xs text-grey max-w-sm">{{ $page->siteDescription }}</p>
   </div>
 </footer>

@@ -11,15 +11,15 @@
     {{-- About --}}
     <div class="md:-mt-16 mb-12 p-0 page__content">
         <div class="page__header">
+            <div class="page__header-image hidden lg:block">
+                <img src="{{ $pages->index->image }}" alt="Image of {{ $page->siteName }}">
+                <span class="hidden sr-only">{{ $page->siteName }}</span>
+            </div>
             <div class="page__header-content text-center sm:text-left">
                 <h2 class="m-0">About Me</h2>
                 @include('_pages.about')
             </div>
           
-            <div class="page__header-image hidden lg:block">
-                <img src="{{ $pages->index->image }}" alt="Image of {{ $page->siteName }}">
-                <span class="hidden sr-only">{{ $page->siteName }}</span>
-            </div>
         </div>
     </div>
     
@@ -38,9 +38,10 @@
     </div>
     
     {{-- Skills --}}
-    <div class="page__hero h-24 md:h-48">
-        <div class="page__hero-wrap max-w-lg p-4 mb-0 md:mb-12 md:p-8 text-xl">
+    <div class="page__hero h-64 md:h-35vh">
+        <div class="page__hero-wrap max-w-lg p-4 mb-0 md:mb-12 md:p-8 md:text-xl">
             <h2 class="page__hero-title mb-0">Skills</h2>
+            @include('_pages.skills')
         </div>
     </div>
     <div class="md:-mt-16 bg-white p-8 mb-12 rounded shadow-lg page__content">

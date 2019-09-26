@@ -4,6 +4,7 @@
     $slug     = ($page->slug ? '_projects.' . $page->slug : false);
     $content  = ($page->content ?? false);
     $tags     = ($page->tags() ?? false);
+    $brand    = ($page->brand ? 'style="background-color: #' . $page->brand . ' !important;"' : false);
     $launched = ($page->launched ? date('F Y', $page->launched) : false);
 @endphp
 
@@ -27,11 +28,23 @@
     <div class="lg:-mt-16 bg-white p-0 rounded shadow-lg page__content">
         
         @if ($image)
-            <a href="{{ $page->url }}" class="block" rel="nofollow noopener" target="_blank">
-                <img class="mx-auto hidden rounded sm:block" src="{{ $image }}" alt="{{ $title }} cover image" class="mb-2">
-            </a>
+        <a href="{{ $page->url }}" class="block" rel="nofollow noopener" target="_blank">
+            <img class="mx-auto hidden sm:block mb-2" src="{{ $image }}" alt="{{ $title }} cover image">
+        </a>
         @endif
-        
+
+        @if ($page->cover)
+        <div class="cards">
+            <a href="{{ $page->url }}" class="block" rel="nofollow noopener" target="_blank">
+                <div class="card rounded-none sm:rounded sm:-mt-12" {!! $brand !!}>
+                    <div class="card__body">
+                        <img src="{{ $page->cover }}" style="max-width: {{ $page->coverWidth }};" alt="{{ $title }} Logo Image" class="w-full mx-auto">
+                    </div>
+                </div>
+            </a>
+        </div>
+        @endif
+
         <div class="px-8 py-8 page__content-text">
             @include($slug)
 

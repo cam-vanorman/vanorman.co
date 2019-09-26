@@ -30,10 +30,10 @@
   @apply flex justify-center p-0;
 
   &-content {
-    @apply flex flex-col w-full h-full mt-0 py-6 px-4 z-0 bg-white shadow-lg rounded;
+    @apply flex flex-col w-full h-full mt-0 py-6 px-4 z-10 bg-white shadow-lg rounded;
 
     @screen md {
-      @apply mt-32 w-4/5 p-6;
+      @apply -ml-32 mt-32 w-4/5 p-6;
     }
 
     @screen lg {
@@ -41,7 +41,7 @@
     }
   }
   &-image {
-    @apply hidden flex-col w-2/3 -ml-32 p-0 justify-center items-center select-none z-10;
+    @apply hidden flex-col w-2/3 p-0 justify-center items-center select-none z-0;
 
     img {
       @apply shadow-lg rounded block mx-auto;

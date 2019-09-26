@@ -1,7 +1,6 @@
 @php
     $launched = ($project->launched ? date('F Y', $project->launched) : false);
     $brand    = ($project->brand ? 'style="background-color: #' . $project->brand . ' !important;"' : false);
-
     $hover    = ($project->brand && $project->cover ? ' card__hover' : false);
 @endphp
 
@@ -19,7 +18,7 @@
                 <h3 class="card__title mb-0">
                    {{ $project->title }}
                 </h3>
-                <p class="text-secondary text-xs m-0">{{ $launched }}</p>
+                <p class="text-xs m-0">{{ $launched }}</p>
             </div>
         </a>
     </div>
