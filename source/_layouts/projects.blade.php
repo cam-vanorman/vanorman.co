@@ -29,7 +29,7 @@
         
         @if ($image)
         <a href="{{ $page->url }}" class="block" rel="nofollow noopener" target="_blank">
-            <img class="mx-auto hidden sm:block mb-2" src="{{ $image }}" alt="{{ $title }} cover image">
+            <img class="mx-auto hidden sm:block mb-2 rounded-t" src="{{ $image }}" alt="{{ $title }} cover image">
         </a>
         @endif
 
