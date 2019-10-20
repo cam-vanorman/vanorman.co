@@ -522,7 +522,7 @@ height: {
   '48': '12rem',
   '64': '16rem',
   'full': '100%',
-  '35vh': '35vh',
+  'hero': '30rem',
   'half': '50vh',
   'screen': '100vh'
 },

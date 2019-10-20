@@ -6,7 +6,7 @@
   @apply flex justify-center items-center h-64 bg-tertiary text-steel-blue;
 
   @screen lg {
-    @apply h-35vh;
+    @apply h-hero;
   }
 
   &-wrap {
