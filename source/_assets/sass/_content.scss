@@ -3,11 +3,7 @@
 }
 
 .page__hero {
-  @apply flex justify-center items-center h-64 bg-tertiary text-steel-blue;
-
-  @screen lg {
-    @apply h-hero;
-  }
+  @apply flex justify-center items-center bg-tertiary text-steel-blue;
 
   &-wrap {
     @apply w-full block text-center mb-4;
