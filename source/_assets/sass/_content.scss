@@ -6,10 +6,10 @@
   @apply flex justify-center items-center bg-tertiary text-steel-blue;
 
   &-wrap {
-    @apply w-full block text-center mb-4;
+    @apply w-full block text-center mb-12;
 
     @screen sm {
-      @apply mb-16;
+      @apply mb-32;
     }
 
     a:hover {
