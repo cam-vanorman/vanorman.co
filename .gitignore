@@ -1,5 +1,6 @@
 .env
 /source/assets/build/*
+/source/_content/*
 /source/_pages/*
 /source/_projects/*
 /source/_skill/*
