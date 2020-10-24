@@ -6,10 +6,14 @@
   @apply flex justify-center items-center bg-tertiary text-steel-blue;
 
   &-wrap {
-    @apply w-full block text-center mb-12;
+    @apply w-full max-w-5xl block text-center text-lg mb-12 py-8 px-3;
 
     @screen sm {
-      @apply mb-32;
+      @apply mb-16;
+    }
+
+    @screen md {
+      @apply text-xl;
     }
 
     a:hover {
@@ -18,11 +22,20 @@
   }
 
   &-title {
-    @apply max-w-lg text-center mx-auto capitalize mt-0 mb-0;
+    @apply max-w-3xl text-center mx-auto capitalize mt-0 mb-1;
   }
 
   &-subtitle {
-    @apply mt-0 mb-1 text-secondary;
+    @apply mt-0 mb-1 text-white;
+
+  }
+
+  &-link {
+    @apply inline-block;
+
+    &:hover {
+      @apply text-steel-blue;
+    }
   }
 }
 
@@ -32,14 +45,11 @@
   &-content {
     @apply flex flex-col w-full h-full mt-0 py-6 px-4 z-10 bg-white shadow-lg rounded;
 
-    @screen md {
-      @apply -ml-32 mt-32 w-4/5 p-6;
-    }
-
     @screen lg {
-      @apply w-2/3;
+      @apply w-2/3 -ml-16 mt-8 p-6;
     }
   }
+
   &-image {
     @apply hidden flex-col w-2/3 p-0 justify-center items-center select-none z-0;
 
@@ -58,7 +68,7 @@
 }
 
 .page__content {
-  @apply mb-8 max-w-lg mx-auto py-4;
+  @apply mb-8 max-w-4xl mx-auto py-4;
 
   h1,
   h2,

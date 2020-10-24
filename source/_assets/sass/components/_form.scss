@@ -4,7 +4,7 @@
 
 .form__text,
 .form__input {
-  @apply block w-full border shadow rounded-lg outline-none appearance-none mb-2 p-4;
+  @apply block w-full border shadow rounded-lg border-gray-200 outline-none appearance-none mb-2 p-4;
 }
 
 .form__text {

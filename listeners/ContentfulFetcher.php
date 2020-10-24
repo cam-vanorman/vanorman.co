@@ -59,12 +59,8 @@ class ContentfulFetcher implements JigsawListener
      * @param string|null $sortOrder
      * @return array
      */
-    private function getPlainEntries(
-        Client $client,
-        string $contentTypeId,
-        string $sortField = null,
-        string $sortOrder = null
-    ): array {
+    private function getPlainEntries(Client $client, string $contentTypeId, string $sortField = null, string $sortOrder = null): array
+    {
         $query = (new \Contentful\Delivery\Query())
             ->setContentType($contentTypeId);
 
@@ -109,10 +105,10 @@ class ContentfulFetcher implements JigsawListener
     private function writeEntryToMarkdownFile(Jigsaw $jigsaw, array $entry, string $collection): void
     {
         $contents = "---\n";
-        $contents .= "extends: _layouts.$collection\n";
         $contents .= "section: content\n";
 
         foreach ($entry as $field => $value) {
+
             if (is_array($value)) {
                 $value = implode(', ', $value);
             }

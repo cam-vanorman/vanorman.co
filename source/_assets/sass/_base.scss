@@ -13,18 +13,17 @@ a {
 }
 
 blockquote {
-    @apply .border-blue-light;
     @apply .border-l-4;
     @apply .font-normal;
     @apply .italic;
     @apply .my-8;
     @apply .pl-6;
-    @apply .text-grey-darker;
+    @apply .text-gray-500;
     @apply .text-lg;
 }
 
 code {
-    @apply .bg-grey-light;
+    @apply .bg-gray-300;
     @apply .px-2;
     @apply .py-px;
     @apply .rounded;
@@ -39,7 +38,7 @@ code.hljs {
     .hljs-keyword,
     .hljs-meta {
         @apply .font-normal;
-        @apply .roman;
+        @apply .not-italic;
     }
 }
 
@@ -113,7 +112,7 @@ p {
 }
 
 pre {
-    @apply bg-grey-lighter leading-loose my-6 overflow-x-auto p-4 rounded shadow text-base;
+    @apply bg-gray-200 leading-loose my-6 overflow-x-auto p-4 rounded shadow text-base;
 
     code {
         @apply bg-transparent block p-0;
@@ -128,3 +127,7 @@ img {
     @apply bg-primary text-white;
 }
 
+.list-reset {
+  list-style: none;
+  padding: 0;
+}

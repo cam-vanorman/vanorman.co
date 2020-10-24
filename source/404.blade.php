@@ -1,7 +1,7 @@
 @extends('_layouts.master')
 
 @section('body')
-    <div class="page__content container flex flex-col items-center text-center mt-32">
+    <div class="page__content container flex flex-1">
         <h1 class="text-6xl">Oh dear. This is a 404 error.</h1>
 
         <h2 class="text-3xl max-w-sm">The Page or Document you were looking for was not found.</h2>

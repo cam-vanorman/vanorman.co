@@ -25,7 +25,9 @@
   }
 
   .menu {
-    @apply list-reset mb-8 block text-center;
+    @apply mb-8 block text-center;
+
+    @extend .list-reset;
 
     &__title {
       @apply text-steel-blue text-xl;

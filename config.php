@@ -3,23 +3,27 @@
 return [
     'baseUrl' => getenv('BASE_URL'),
     'production' => false,
-    'siteName' => getenv('SITE_NAME'),
-    'siteDescription' => getenv('SITE_DESCRIPTION'),
-    'siteAuthor' => getenv('SITE_AUTHOR'),
-    'siteLogo' => getenv('SITE_LOGO'),
-    'siteRole' => getenv('SITE_ROLE'),
+    'site' => [
+        'name' => getenv('SITE_NAME'),
+        'description' => getenv('SITE_DESCRIPTION'),
+        'author' => getenv('SITE_AUTHOR'),
+        'logo' => getenv('SITE_LOGO'),
+        'role' => getenv('SITE_ROLE'),
+        'location' => getenv('SITE_LOCATION'),
+    ],
 
     // collections
     'collections' => [
-        'projects' => [
-            'content_model' => 'projects',
-            'sort' => '-launched',
-            'path' => 'project/{filename}',
-        ],
         'pages' => [
             'content_model' => 'page',
             'sort' => '-publishDate',
             'path' => '{filename}',
+        ],
+        'projects' => [
+            'content_model' => 'projects',
+            'sort' => '-launched',
+            'path' => 'project/{filename}',
+            'extends' => '_layouts.project',
         ],
         'skill' => [
             'content_model' => 'skill',
