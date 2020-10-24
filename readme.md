@@ -41,8 +41,8 @@ As with all Jigsaw sites, configuration settings can be found in `config.php`; y
 return [
     'baseUrl' => 'https://my-awesome-portfolio.com/',
     'production' => false,
-    'siteName' => 'My Site',
-    'siteDescription' => 'Welcome to my portfolio',
+    'site['name']' => 'My Site',
+    'site['description']' => 'Welcome to my portfolio',
     ...
 ];
 ```
@@ -59,7 +59,7 @@ The top of each content page contains a YAML header that specifies how it should
 
 ```yaml
 ---
-extends: _layouts.project
+extends: _layouts.projects
 section: content
 title: My Amazing Project
 date: 2018-12-25
