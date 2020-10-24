@@ -22,7 +22,7 @@ return [
         'projects' => [
             'content_model' => 'projects',
             'sort' => '-launched',
-            'path' => 'projects/{filename}',
+            'path' => 'project/{filename}',
             'extends' => '_layouts.project',
         ],
         'skill' => [
