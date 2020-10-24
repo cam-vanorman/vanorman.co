@@ -4,7 +4,7 @@
       @if($page->getPath() !== '/contact')
         {{-- To-Do: Build into contentful --}}
         @php
-          $cta_title   = 'Need an experienced ' . $page->siteRole . '?';
+          $cta_title   = 'Need an experienced ' . $page->site['role'] . '?';
           $cta_message = "Let's connect!";
           $cta_link    = "/contact";
         @endphp
@@ -28,31 +28,31 @@
         <a class="md:inline-block" href="/">
           <img
             class="logo__image mx-auto mb-10 sm:m-0"
-            src="{{ $page->siteLogo }}"
-            alt="{{ $page->siteName }}">
+            src="{{ $page->site['logo'] }}"
+            alt="{{ $page->site['name'] }}">
         </a>
       </div>
       <nav class="menu">
         <h3 class="menu__title">Around the site</h3>
         <ul class="m-0 list-reset">
           <li class="menu__item">
-            <a title="{{ $page->siteName }} Projects" href="/projects"
+            <a title="{{ $page->site['name'] }} Projects" href="/projects"
                 class="text-steel-blue hover:text-secondary">
                 Projects
             </a>
           </li>
           <li class="menu__item">
-            <a title="{{ $page->siteName }} Contact" href="/contact"
+            <a title="{{ $page->site['name'] }} Contact" href="/contact"
                 class="text-steel-blue hover:text-secondary">
                 Contact
             </a>
           </li>
         </ul>
       </nav>
-    </div>   
+    </div>
   </div>
   <div class="copyright">
-    <p class="mb-0">&copy; 2018-{{ date('Y') }} {{ $page->siteName }}</p>
-    <p class="mt-3 mx-auto text-xs text-grey max-w-sm">{{ $page->siteDescription }}</p>
+    <p class="mb-0">&copy; 2018-{{ date('Y') }} {{ $page->site['name'] }}</p>
+    <p class="mt-3 mx-auto text-xs text-gray max-w-sm">{{ $page->site['description'] }}</p>
   </div>
 </footer>

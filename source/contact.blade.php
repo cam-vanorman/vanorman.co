@@ -1,12 +1,14 @@
 @extends('_layouts.master')
 
-@php($contact = getenv('CONTACT_FORM') ?? getenv('CONTACT_FORM'))
+@php
+    $contact = getenv('CONTACT_FORM') ?? getenv('CONTACT_FORM')
+@endphp
 
 @push('meta')
-    <meta property="og:title" content="Contact {{ $page->siteName }}" />
+    <meta property="og:title" content="Contact {{ $page->site['name'] }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ $page->getUrl() }}"/>
-    <meta property="og:description" content="Get in touch with {{ $page->siteName }}" />
+    <meta property="og:description" content="Get in touch with {{ $page->site['name'] }}" />
 @endpush
 
 @section('body')
@@ -64,14 +66,13 @@
                     placeholder="A lovely message here."
                     required
                 ></textarea>
-            
+
                 @if(getenv('RECAPTCHA_SITE_KEY'))
                     <div class="mt-6 g-recaptcha" id="g-recaptcha" data-sitekey="{{ getenv('RECAPTCHA_SITE_KEY') }}"></div>
                 @endif
             </div>
 
             <div class="flex justify-end w-full">
-
                 <input
                     type="submit"
                     value="Submit"
@@ -81,3 +82,10 @@
         </form>
     </div>
 @stop
+
+@push('scripts')
+    @if (getenv('RECAPTCHA_SITE_KEY') && $page->production)
+        {{-- Recaptcha --}}
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    @endif
+@endpush

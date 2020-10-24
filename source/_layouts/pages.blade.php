@@ -1,17 +1,20 @@
 @extends('_layouts.master')
 
 @push('meta')
-    <meta property="og:title" content="{{ $page->title }}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="{{ $page->getUrl() }}"/>
-    <meta property="og:description" content="{{ $page->description }}" />
+    @include('_components.meta', [
+        'title' => $page->title,
+        'type'  => 'article',
+        'url' => $page->getUrl(),
+        'description' => $page->body
+    ])
 @endpush
 
 @section('body')
 
+    {{-- Introduction --}}
     <div class="page__hero">
-        <div class="page__hero-wrap">
-          <h1 class="page__hero-title mb-5">{{ $page->title }}</h1>
+        <div class="page__hero-wrap max-w-2xl p-8 text-sm md:text-xl">
+           <h1 class="page__hero-title mb-5">{{ $page->title }}</h1>
         </div>
     </div>
 

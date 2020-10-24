@@ -11,9 +11,4 @@
         gtag('config', '{{ getenv('GA_ID') }}');
       </script>
   @endif
-
-  @if (getenv('RECAPTCHA_SITE_KEY'))
-      {{-- Recaptcha --}}
-      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  @endif
 @endif

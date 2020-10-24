@@ -1,9 +1,7 @@
 .banner {
-  position: relative;
-  height: 3.5rem;
-  transition: all 0.3s;
+  z-index: 100;
 
-  @apply flex items-center content-start shadow-lg bg-tertiary h-16 py-4;
+  @apply sticky flex items-center content-start bg-tertiary h-16 py-4 top-0;
 
   &--active {
     position: fixed;
@@ -14,12 +12,12 @@
   }
 
   &__title {
-    @apply text-lg my-0 uppercase text-steel-blue font-extrabold;
+    @apply text-xl my-0 text-steel-blue font-extrabold;
   }
 }
 
 .logo {
-  @apply flex items-center flex-no-shrink mr-6;
+  @apply flex items-center flex-shrink-0 mr-6;
 
   .brand {
     @apply text-primary;
@@ -33,9 +31,8 @@
 
   &__image {
     width: 100px;
-    vertical-align: middle;
 
-    @apply fill-current;
+    @apply align-middle fill-current;
 
     &-text {
       @apply stroke-current;
@@ -61,7 +58,8 @@
   @apply mx-auto text-lg flex block tracking-wide uppercase;
 
   .nav {
-    @apply list-reset justify-center font-bold p-5 h-full;
+    @apply justify-center font-bold p-5 h-full;
+    @extend .list-reset;
   }
 
   .menu-item {
@@ -88,7 +86,9 @@
     }
 
     .sub-menu {
-      @apply mt-1 pb-0 list-reset block;
+      @apply mt-1 pb-0 block;
+
+      @extend .list-reset;
 
       .menu-item {
         @apply p-0;
@@ -103,37 +103,6 @@
 
 .menu {
   @apply block flex-grow flex items-center w-auto;
-}
-
-.menu__overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  height: 0%;
-  visibility: hidden;
-  overflow: hidden;
-  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition-duration: 0.25s;
-  transition-property: opacity;
-
-  @apply z-20 w-full bg-primary;
-
-  &.open {
-    opacity: 1;
-    visibility: visible;
-
-    @apply h-full w-full;
-  }
-
-  .menu {
-    position: relative;
-    height: 70%;
-    top: 50%;
-    transform: translateY(-50%);
-
-    @apply text-center my-3;
-  }
 }
 
 @screen sm {
@@ -167,20 +136,7 @@
 }
 
 .search {
-  @apply transition-fast relative block h-10 w-full rounded-lg outline-none cursor-pointer text-grey-darker px-4 pb-0;
-}
-
-/* animate */
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    left: 20%;
-  }
-
-  100% {
-    opacity: 1;
-    left: 0;
-  }
+  @apply transition-fast relative block h-10 w-full rounded-lg outline-none cursor-pointer text-gray-600 px-4 pb-0;
 }
 
 @screen sm {
