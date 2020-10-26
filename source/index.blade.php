@@ -34,11 +34,11 @@
 
     {{-- Work --}}
     <div class="page__hero mb-12">
-        <div class="page__hero-wrap md:w-1/3 lg:w-1/4">
-            <h2 class="page__hero-title">My Recent Work</h2>
+        <div class="page__hero-wrap md:p-8 md:text-left md:w-1/3 lg:w-1/4">
+            <h2 class="page__hero-title md:text-left">My Recent Work</h2>
             @include('_pages.projects')
         </div>
-        <div class=" md:-mt-16 bg-white p-8 mb-12 cards justify-around rounded shadow-lg page__content md:w-2/3 lg:w-3/4">
+        <div class="md:-mt-16 bg-white p-8 mb-12 cards justify-around rounded shadow-lg page__content md:w-2/3 lg:w-3/4">
             @foreach ($projects as $project)
                     @include('_components.project-card', ['project' => $project])
             @endforeach
@@ -47,8 +47,8 @@
 
     {{-- Expertise --}}
     <div class="page__hero md:flex-row-reverse">
-        <div class="page__hero-wrap md:w-1/3 lg:w-1/4">
-            <h2 class="page__hero-title">My Expertise</h2>
+        <div class="page__hero-wrap md:p-8 md:text-left md:w-1/3 lg:w-1/4">
+            <h2 class="page__hero-title md:text-left">My Expertise</h2>
             @include('_pages.skills')
         </div>
         <div class="md:-mt-16 bg-white p-8 mb-12 rounded shadow-lg page__content md:w-2/3 lg:w-3/4">

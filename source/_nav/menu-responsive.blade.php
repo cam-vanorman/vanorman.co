@@ -17,9 +17,9 @@
 			x-ref="closeButton"
 			:class="{'focus:outline-none': !usedKeyboard}"
 			class="absolute top-0 right-0 mr-4 mt-2">
-            <span class="text-xs text-black pr-2 uppercase">Close Menu</span>
+            <span class="text-xs text-gray-100 pr-2 uppercase">Close Menu</span>
             <svg
-                class="inline-block fill-current text-black h-9 w-4"
+                class="inline-block fill-current text-gray-100 h-9 w-4"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 36 30"
             >
@@ -46,7 +46,12 @@
             </ul>
         </nav>
         <div class="absolute bottom-0 left-0 right-0 p-6">
-            <p class="mb-0 mx-auto text-center text-xs">&copy; {{ $page->site['name'] }}</p>
+            @if($page->site['logo'])
+                <a href="/" title="{{ $page->site['name'] }} home" class="px-5">
+                    <img class="logo__image w-16 block mx-auto text-center" src="{{ $page->site['logo'] }}" alt="{{ $page->site['name'] }} Logo">
+                </a>
+            @endif
+            <p class="mb-0 mx-auto text-steel-blue text-center text-xs">&copy; {{ $page->site['name'] }}</p>
         </div>
 	</div>
 </section>

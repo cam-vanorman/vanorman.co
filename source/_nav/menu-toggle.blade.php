@@ -1,5 +1,5 @@
 <button
-    class="flex justify-center items-center h-10 px-5 rounded-full focus:outline-none"
+    class="flex justify-center items-center h-10 px-3 rounded-full focus:outline-none"
     x-data="{usedKeyboard: false}"
     @keydown.window.tab="usedKeyboard = true"
     @click="$dispatch('open-menu', { open: true })"

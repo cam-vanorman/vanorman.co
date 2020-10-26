@@ -3,14 +3,14 @@
 }
 
 .page__hero {
-  @apply bg-tertiary text-steel-blue;
+  @apply bg-tertiary text-steel-blue px-4;
 
   @screen md {
-    @apply flex justify-center items-center;
+    @apply flex justify-center items-center px-8;
   }
 
   &-wrap {
-    @apply w-full block text-center text-lg py-8 px-3 max-w-5xl;
+    @apply w-full block text-center text-lg py-8 px-4 max-w-5xl;
 
     @screen md {
       @apply mb-16 text-xl;

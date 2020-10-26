@@ -1,13 +1,13 @@
 .nav-menu {
-    @apply fixed duration-300 right-0 top-0 transform w-full max-w-xs h-screen bg-gray-100 overflow-y-scroll z-50;
+    @apply fixed duration-300 right-0 top-0 transform w-full max-w-xs h-screen bg-tertiary overflow-y-scroll z-50;
 }
 
 .nav-menu__item {
-    @apply block no-underline py-4 px-6 mt-0 text-gray-900 text-xl;
+    @apply block no-underline py-4 px-6 mt-0 text-steel-blue text-xl;
 
     @extend .list-reset;
 
     &:hover {
-        @apply text-steel-blue bg-tertiary;
+        @apply text-tertiary bg-secondary;
     }
 }
