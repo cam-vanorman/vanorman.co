@@ -1,5 +1,5 @@
 @foreach ($skill as $type)
-    <div class="w-full md:w-1/2 sm:mb-6">
+    <div class="w-full md:w-1/2 sm:mb-6 px-3">
         <h3>{{ $type->title }}</h3>
         <div class="tags">
             @php
