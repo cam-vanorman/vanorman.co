@@ -9,21 +9,24 @@
     },
     "devDependencies": {
         "axios": "^0.18.0",
-        "browser-sync": "^2.26.12",
+        "browser-sync": "^2.26.13",
         "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^3.2.3",
         "extra-watch-webpack-plugin": "^1.0.3",
         "fuse.js": "^3.6.1",
         "hasbin": "^1.2.3",
         "highlight.js": "^9.18.3",
-        "laravel-mix": "^4.0.0||^5.0.0",
-        "laravel-mix-jigsaw": "^1.0.0",
+        "laravel-mix": "^5.0.7",
+        "laravel-mix-jigsaw": "^1.4.0",
         "node-cmd": "^3.0.0",
-        "sass": "^1.26.11",
+        "sass": "^1.27.0",
         "sass-loader": "^7.3.1",
-        "tailwindcss": "^1.8.7",
+        "tailwindcss": "^1.9.6",
         "vue": "^2.6.12",
         "vue-template-compiler": "^2.6.12",
         "yargs": "^4.6.0"
+    },
+    "dependencies": {
+        "alpinejs": "^2.7.2"
     }
 }
