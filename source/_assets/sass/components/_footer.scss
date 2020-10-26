@@ -1,27 +1,21 @@
 .page__footer {
-  position: relative;
-  background: transparent;
-  overflow: hidden;
   padding-top: 500px;
   margin-top: -480px;
 
-  @apply items-center justify-center z-0;
+  @apply relative bg-transparent overflow-hidden items-center justify-center z-0;
 
   &::before {
     content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
     top: 600px;
     height: 2000px;
     transform: skew(0, -4deg);
     z-index: -1;
 
-    @apply bg-tertiary;
+    @apply absolute bg-tertiary left-0 right-0;
   }
 
   &-text {
-    @apply py-5 px-3 my-5;
+    @apply py-5 px-3 my-5 mx-auto;
   }
 
   .menu {
@@ -50,15 +44,19 @@
 @screen sm {
   .page__footer {
     &-text {
-      @apply flex;
+      @apply flex max-w-screen-sm;
     }
 
     &-logo {
-      @apply w-3/4;
+      @apply flex-1 text-center;
     }
 
     .menu {
-      @apply text-left w-1/4;
+      @apply text-center flex-1;
+
+      a:hover {
+        @apply text-secondary;
+      }
     }
   }
 }

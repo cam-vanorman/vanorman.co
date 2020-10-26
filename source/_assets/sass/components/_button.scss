@@ -1,14 +1,14 @@
 .btn {
-  transition: 0.2s ease;
+  transition: 0.35s ease;
 
-  @apply font-extrabold bg-secondary text-steel-blue rounded cursor-pointer my-3 px-6 py-4 leading-none uppercase tracking-wide shadow-lg ;
+  @apply inline-block font-extrabold font-mono cursor-pointer my-5 px-3 py-1 uppercase rounded border-2 border-tertiary bg-white text-tertiary text-center;
 
   &:hover {
-    @apply bg-tertiary text-steel-blue shadow;
+    @apply bg-tertiary text-steel-blue;
   }
 
   &--primary {
-    @apply bg-tertiary text-steel-blue;
+    @apply bg-tertiary border-none text-steel-blue;
 
     &:hover {
       @apply bg-secondary text-steel-blue;

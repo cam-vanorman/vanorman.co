@@ -3,17 +3,17 @@
 }
 
 .page__hero {
-  @apply flex justify-center items-center bg-tertiary text-steel-blue;
+  @apply bg-tertiary text-steel-blue;
+
+  @screen md {
+    @apply flex justify-center items-center;
+  }
 
   &-wrap {
-    @apply w-full max-w-5xl block text-center text-lg mb-12 py-8 px-3;
-
-    @screen sm {
-      @apply mb-16;
-    }
+    @apply w-full block text-center text-lg py-8 px-3 max-w-5xl;
 
     @screen md {
-      @apply text-xl;
+      @apply mb-16 text-xl;
     }
 
     a:hover {
@@ -68,12 +68,17 @@
 }
 
 .page__content {
-  @apply mb-8 max-w-4xl mx-auto py-4;
+  @apply max-w-screen-lg mb-8 mx-auto py-8 text-tertiary;
 
   h1,
   h2,
   h3 {
     @apply text-tertiary;
+  }
+
+  &-body,
+  &-sidebar {
+    @apply px-8 py-8 w-full;
   }
 }
 

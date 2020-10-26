@@ -4,9 +4,13 @@
 
 .form__text,
 .form__input {
-  @apply block w-full border shadow rounded-lg border-gray-200 outline-none appearance-none mb-2 p-4;
+  @apply block w-full shadow rounded-md border-2 border-gray-400 appearance-none mb-2 p-3;
 }
 
 .form__text {
-  @apply px-4 py-6;
+  @apply p-3;
+}
+
+input[type="submit"] {
+  @apply w-full block shadow-none bg-transparent;
 }

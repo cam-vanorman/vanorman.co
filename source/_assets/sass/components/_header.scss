@@ -1,15 +1,5 @@
 .banner {
-  z-index: 100;
-
-  @apply sticky flex items-center content-start bg-tertiary h-16 py-4 top-0;
-
-  &--active {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    @apply w-full bg-steel-blue fill-current shadow-lg;
-  }
+  @apply sticky flex items-center content-start bg-tertiary h-16 py-4 top-0 z-40;
 
   &__title {
     @apply text-xl my-0 text-steel-blue font-extrabold;
@@ -30,9 +20,15 @@
   }
 
   &__image {
-    width: 100px;
-
     @apply align-middle fill-current;
+
+    .banner & {
+      max-width: 50px;
+    }
+
+    .page__footer & {
+      @apply w-32;
+    }
 
     &-text {
       @apply stroke-current;
