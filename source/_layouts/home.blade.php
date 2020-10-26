@@ -9,22 +9,22 @@
     </div>
 
     {{-- About --}}
-    <div class="md:-mt-16 mb-12 p-0 page__content">
+    <div class="md:-mt-16 pb-12 page__content">
         <div class="page__header">
-            <div class="page__header-image hidden lg:block">
+            <div class="page__header-image">
                 <img src="{{ $pages->index->image }}" alt="Image of {{ $page->site['name'] }}">
                 <span class="hidden sr-only">{{ $page->site['name'] }}</span>
             </div>
             <div class="page__header-content text-center sm:text-left">
-                <h2 class="m-0">About Me</h2>
+                <h2>About Me</h2>
                 @include('_pages.about')
             </div>
-          
+
         </div>
     </div>
-    
+
     {{-- Work --}}
-    <div class="mb-12 text-center">
+    <div class="page__content bg-white rounded shadow-lg text-center">
         <div class="section__title max-w-2xl container text-tertiary mb-6">
             <h2>My Recent Work</h2>
 
@@ -37,7 +37,7 @@
             @endforeach
         </div>
     </div>
-    
+
     {{-- Expertise --}}
     <div class="page__hero h-64 md:h-35vh">
         <div class="page__hero-wrap max-w-2xl p-4 mb-0 md:mb-12 md:p-8 md:text-xl">

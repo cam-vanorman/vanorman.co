@@ -2,6 +2,7 @@
     $title    = ($page->title ?? false);
     $image    = ($page->image ?? false);
     $slug     = ($page->slug ? '_projects.' . $page->slug : false);
+    $url      = ($page->url ? strtok($page->url, '?'): false);
     $content  = ($page->content ?? false);
     $tags     = ($page->tags() ?? false);
     $brand    = ($page->brand ? 'style="background-color: #' . $page->brand . ' !important;"' : false);
@@ -19,53 +20,49 @@
     ])
 @endpush
 
-@push('styles')
-    <style>
-        .brand-{{ $slug }} { background-color: #{{ $brandColor }}; }
-        .brand-{{ $slug }} .card__img { max-width: {{ $coverWidth }}; }
-    </style>
-@endpush
-
 @section('body')
     <div class="page__hero">
         <div class="page__hero-wrap">
-            <h4 class="page__hero-subtitle">{{ $launched }}</h4>
             <h1 class="page__hero-title">{{ $title }}</h1>
-            <a href="{{ $page->url }}" rel="nofollow noopener" target="_blank" class="page__hero-link">Visit Live Site &RightArrow;</a>
+            <h4 class="page__hero-subtitle">Launched {{ $launched }}</h4>
+            @if ($url)
+            <a href="{{ $page->url }}" rel="nofollow noopener" target="_blank" class="btn btn--primary text-center text-xs mx-auto">{{ $url }}</a>
+            @endif
         </div>
     </div>
-    <div class="lg:-mt-16 bg-white p-0 rounded shadow-lg page__content">
-
+    <div class="md:-mt-16 p-0 page__content rounded">
         @if ($image)
         <a href="{{ $page->url }}" class="block" rel="nofollow noopener" target="_blank">
-            <img class="mx-auto hidden sm:block mb-2 rounded-t" src="{{ $image }}" alt="{{ $title }} cover image">
+            <img class="mx-auto mb-2 rounded" src="{{ $image }}" alt="{{ $title }} cover image">
         </a>
         @endif
-
-        @if ($page->cover)
-        <div class="cards">
-            <a href="{{ $page->url }}" class="block" rel="nofollow noopener" target="_blank">
-                <div class="card rounded-none sm:rounded sm:-mt-12" {!! $brand !!}>
-                    <div class="card__body">
-                        <img src="{{ $page->cover }}" style="max-width: {{ $page->coverWidth }};" alt="{{ $title }} Logo Image" class="w-full mx-auto">
-                    </div>
-                </div>
-            </a>
-        </div>
-        @endif
-
-        <div class="px-8 py-8 page__content-text">
+    </div>
+    <div class="md:flex bg-white rounded shadow-lg page__content">
+        <div class="page__content-body w-full md:w-2/3">
             @include($slug)
+        </div>
+        <div class="page__content-sidebar w-full md:w-1/3">
+            {{-- Logo --}}
+            @if ($page->cover)
+            <div class="card" {!! $brand !!}>
+                <div class="card__body">
+                    <img src="{{ $page->cover }}" alt="{{ $title }} Logo Image" class="w-full max-w-sm mx-auto">
+                </div>
+            </div>
+            @endif
 
-            <h3 class="text-center">Built With</h3>
+            {{-- Built with --}}
+            @if ($tags)
+            <h3>Built With</h3>
             @include('_components.tags', ['tags' => $tags])
+            @endif
         </div>
     </div>
 
-    <nav class="flex justify-between text-center items-center container md:text-base">
+    <nav class="text-center container md:flex md:justify-between md:items-center md:text-base">
         <div>
             @if ($next = $page->getNext())
-                <a class="text-lg p-3" href="{{ $next->getUrl() }}" title="Older Project: {{ $next->title }}">
+                <a class="text-lg p-3 btn btn--primary" href="{{ $next->getUrl() }}" title="Older Project: {{ $next->title }}">
                     &LeftArrow; {{ $next->title }}
                 </a>
             @endif
@@ -73,7 +70,7 @@
 
         <div>
             @if ($previous = $page->getPrevious())
-                <a class="text-lg p-3" href="{{ $previous->getUrl() }}" title="Newer Project: {{ $previous->title }}">
+                <a class="text-lg p-3 btn btn--primary" href="{{ $previous->getUrl() }}" title="Newer Project: {{ $previous->title }}">
                     {{ $previous->title }} &RightArrow;
                 </a>
             @endif

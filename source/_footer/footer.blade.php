@@ -22,37 +22,34 @@
 
     </div>
   </div>
-  <div class="page__footer-text">
-    <div class="container cards">
-      <div class="page__footer-logo">
-        <a class="md:inline-block" href="/">
-          <img
-            class="logo__image mx-auto mb-10 sm:m-0"
-            src="{{ $page->site['logo'] }}"
-            alt="{{ $page->site['name'] }}">
-        </a>
-      </div>
-      <nav class="menu">
-        <h3 class="menu__title">Around the site</h3>
-        <ul class="m-0 list-reset">
-          <li class="menu__item">
-            <a title="{{ $page->site['name'] }} Projects" href="/projects"
-                class="text-steel-blue hover:text-secondary">
-                Projects
-            </a>
-          </li>
-          <li class="menu__item">
-            <a title="{{ $page->site['name'] }} Contact" href="/contact"
-                class="text-steel-blue hover:text-secondary">
-                Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
+  <div class="page__footer-text mx-auto">
+    <div class="page__footer-logo">
+      <a class="md:inline-block" href="/">
+        <img
+          class="logo__image mx-auto mb-10 sm:m-0"
+          src="{{ $page->site['logo'] }}"
+          alt="{{ $page->site['name'] }}">
+      </a>
     </div>
+    <nav class="menu">
+      <h3 class="menu__title">Around the site</h3>
+      <ul class="m-0 list-reset">
+        <li class="menu__item">
+          <a title="{{ $page->site['name'] }} Projects" href="/projects"
+              class="text-steel-blue hover:text-secondary">
+              Projects
+          </a>
+        </li>
+        <li class="menu__item">
+          <a title="{{ $page->site['name'] }} Contact" href="/contact"
+              class="text-steel-blue hover:text-secondary">
+              Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
   <div class="copyright">
-    <p class="mb-0">&copy; 2018-{{ date('Y') }} {{ $page->site['name'] }}</p>
-    <p class="mt-3 mx-auto text-xs text-gray max-w-sm">{{ $page->site['description'] }}</p>
+    <p class="mb-0">&copy; {{ $page->site['name'] }}</p>
   </div>
 </footer>
