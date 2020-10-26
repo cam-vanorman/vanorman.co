@@ -1,14 +1,14 @@
 @php
-  $className = (isset($class) ? $class : false); 
+  $className = (isset($class) ? $class : false);
   $content   = (isset($slug) ? $slug : false);
 @endphp
 
-<div class="page__header {{ $class }}">
+<div class="page__header {{ $className }}">
   <div class="page__header-content">
     @if ($title)
       <h1>{{ $title }}</h1>
     @endif
-    
+
     @if ($content)
       @include($content)
     @endif

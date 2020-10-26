@@ -1,4 +1,4 @@
-<div class="w-full block mb-5 mx-auto text-center">
+<div class="tags">
     @foreach($tags as $tag)
         <span class="tag">{{ $tag }}</span>
     @endforeach

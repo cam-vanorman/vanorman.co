@@ -30,14 +30,15 @@
                 <img class="card__img w-full px-2 m-auto" src="{{ $cover }}" alt="{{ $title }} Image">
             @endif
 
-            <div class="card__body content-center">
-                <h3 class="card__title mb-0">
-                   {{ $title }}
-                </h3>
-
-                @if($launched)
+            <div class="card__body">
+                <div>
+                    <h3 class="card__title mb-0">
+                       {{ $title }}
+                    </h3>
+                    @if($launched)
                     <p class="text-xs m-0">{{ $launched }}</p>
-                @endif
+                    @endif
+                </div>
             </div>
         </a>
     </div>
