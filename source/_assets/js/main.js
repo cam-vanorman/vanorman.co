@@ -1,3 +1,5 @@
+import 'alpinejs';
+
 // window.axios = require('axios');
 // window.fuse = require('fuse.js');
 // window.Vue = require('vue');
