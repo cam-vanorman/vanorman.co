@@ -51,7 +51,7 @@
             <h2 class="page__hero-title md:text-left">{{ $pages->skills->title }}</h2>
             @include('_pages.skills')
         </div>
-        <div class="md:-mt-16 bg-white p-8 mb-12 rounded shadow-lg page__content md:w-2/3 lg:w-3/4">
+        <div class="md:-mt-16 bg-white p-8 mb-12 rounded shadow-lg page__content md:w-2/3 lg:w-3/4 md:flex md:flex-wrap">
             @include('_components.skills', ['skill' => $skill])
         </div>
     </div>
