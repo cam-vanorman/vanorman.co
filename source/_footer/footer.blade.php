@@ -35,15 +35,15 @@
       <h3 class="menu__title">Around the site</h3>
       <ul class="m-0 list-reset">
         <li class="menu__item">
-          <a title="{{ $page->site['name'] }} Projects" href="/projects"
+          <a title="{{ $pages->projects->title }}" href="{{ $pages->projects->slug }}"
               class="text-steel-blue hover:text-secondary">
-              Projects
+              {{ $pages->projects->title }}
           </a>
         </li>
         <li class="menu__item">
-          <a title="{{ $page->site['name'] }} Contact" href="/contact"
+          <a title="Contact Me" href="/contact"
               class="text-steel-blue hover:text-secondary">
-              Contact
+              Contact Me
           </a>
         </li>
       </ul>

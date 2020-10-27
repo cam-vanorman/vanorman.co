@@ -28,29 +28,35 @@
         </button>
 
         <nav class="py-16">
-            <ul class="list-reset text-center">
+            <ul class="list-reset mb-3">
                 <li>
                     <a
-                        title="{{ $page->site['name'] }} Projects"
-                        href="/projects"
+                        title="{{ $pages->projects->title }}"
+                        href="/{{ $pages->projects->getUrl() }}"
                         class="nav-menu__item transition duration-300"
-                    >Projects</a>
+                    >{{ $pages->projects->title }}</a>
+                    <ul class="mb-3">
+                        @foreach($projects as $project)
+                            <li>
+                                <a
+                                    title="{{ $project->title }}"
+                                    href="{{ $project->getUrl() }}"
+                                    class="nav-menu__item py-2 text-sm transition duration-300"
+                                >{{ $project->title }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
                 </li>
                 <li>
                     <a
-                        title="{{ $page->site['name'] }} Contact"
+                        title="Contact Me"
                         href="/contact"
                         class="nav-menu__item transition duration-300"
-                    >Contact</a>
+                    >Contact Me</a>
                 </li>
             </ul>
         </nav>
         <div class="absolute bottom-0 left-0 right-0 p-6">
-            @if($page->site['logo'])
-                <a href="/" title="{{ $page->site['name'] }} home" class="px-5">
-                    <img class="logo__image w-16 block mx-auto text-center" src="{{ $page->site['logo'] }}" alt="{{ $page->site['name'] }} Logo">
-                </a>
-            @endif
             <p class="mb-0 mx-auto text-steel-blue text-center text-xs">&copy; {{ $page->site['name'] }}</p>
         </div>
 	</div>

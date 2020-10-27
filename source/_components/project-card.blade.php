@@ -31,14 +31,12 @@
             @endif
 
             <div class="card__body">
-                <div>
-                    <h3 class="card__title mb-0">
-                       {{ $title }}
-                    </h3>
-                    @if($launched)
-                    <p class="text-xs m-0">{{ $launched }}</p>
-                    @endif
-                </div>
+                <h3 class="card__title mb-0">
+                    {{ $title }}
+                </h3>
+                @if($launched)
+                <p class="text-xs m-0">{{ $launched }}</p>
+                @endif
             </div>
         </a>
     </div>

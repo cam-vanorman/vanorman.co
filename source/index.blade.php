@@ -19,21 +19,33 @@
     </div>
 
     {{-- About --}}
-    <div class="md:-mt-16 mb-12 p-0 page__content">
+    <div class="md:-mt-16 mb-12 p-0 page__content container">
         <div class="page__header">
             <div class="page__header-image">
                 <img src="{{ $pages->index->image }}" alt="Image of {{ $page->site['name'] }}">
                 <span class="hidden sr-only">{{ $page->site['name'] }}</span>
             </div>
-            <div class="page__header-content section__title text-center sm:text-left">
-                <h2>{{ $pages->about->title }}</h2>
+            <div class="page__header-content section__title text-center md:text-justify">
+                <h2 class="sm:text-left">{{ $pages->about->title }}</h2>
                 @include('_pages.about')
             </div>
         </div>
     </div>
 
+    <div class="page__hero mb-12 md:mb-24 flex-row-reverse">
+        <div class="page__hero-wrap md:p-8 md:text-left md:w-1/3 lg:w-1/4">
+            <h2 class="page__hero-title md:text-left">{{ $pages['digitalocean-dev-talk']->title }}</h2>
+            @include('_pages.digitalocean-dev-talk')
+        </div>
+        <div class="md:-mt-16 bg-white p-8 mb-12 cards justify-around rounded shadow-lg page__content md:w-2/3 lg:w-3/4 video__embed h-64 md:h-screen">
+             @include('_components.youtube-embed', [
+                'embed' => $pages['digitalocean-dev-talk']->embeddedMedia,
+            ])
+        </div>
+    </div>
+
     {{-- Work --}}
-    <div class="page__hero mb-12">
+    <div class="page__hero mb-12 md:mb-24">
         <div class="page__hero-wrap md:p-8 md:text-left md:w-1/3 lg:w-1/4">
             <h2 class="page__hero-title md:text-left">{{ $pages->projects->title }}</h2>
             @include('_pages.projects')

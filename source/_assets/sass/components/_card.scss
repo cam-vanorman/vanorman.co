@@ -18,7 +18,7 @@
   &__block {
     @apply w-full h-full px-3;
 
-    @screen sm {
+    @screen md {
       @apply w-1/2;
     }
 
@@ -29,7 +29,7 @@
   }
 
   &__body {
-    @apply px-6 py-6 rounded text-center align-middle block;
+    @apply px-3 py-6 rounded text-center align-middle block;
 
     .project & {
       @apply h-32;

@@ -20,8 +20,6 @@
   }
 
   &__image {
-    @apply align-middle fill-current;
-
     .banner & {
       max-width: 50px;
     }
@@ -59,20 +57,17 @@
   }
 
   .menu-item {
-    position: relative;
     transition: all 0.3s;
 
-    @apply p-1;
+    @apply relative p-1;
 
     > a {
-      position: relative;
       text-decoration: none;
-      overflow: hidden;
       transition: all 0.3s;
 
       @extend h3;
 
-      @apply block text-steel-blue p-2 rounded border-2;
+      @apply relative overflow-hidden block text-steel-blue p-2 rounded border-2;
 
       &:hover,
       &:active,

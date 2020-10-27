@@ -1,12 +1,12 @@
-<nav class="hidden lg:flex items-center justify-end text-lg">
-    <a title="{{ $page->site['name'] }} Projects" href="/projects"
+<nav class="hidden md:flex items-center justify-end text-lg">
+    <a title="{{ $pages->projects->title }} " href="/{{ $pages->projects->slug }}"
         class="ml-6 text-steel-blue hover:text-secondary">
-        Projects
+        {{ $pages->projects->title }}
     </a>
 
-    <a title="{{ $page->site['name'] }} Contact" href="/contact"
+    <a title="Contact Me" href="/contact"
         class="ml-6 text-steel-blue hover:text-secondary">
-        Contact
+        Contact Me
     </a>
 
 </nav>

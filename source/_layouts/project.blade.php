@@ -24,7 +24,6 @@
     <div class="page__hero">
         <div class="page__hero-wrap">
             <h1 class="page__hero-title">{{ $title }}</h1>
-            <h4 class="page__hero-subtitle">Launched {{ $launched }}</h4>
             @if ($url)
             <a href="{{ $page->url }}" rel="nofollow noopener" target="_blank" class="btn btn--primary text-center text-xs mx-auto">{{ $url }}</a>
             @endif
@@ -42,6 +41,7 @@
             @include($slug)
         </div>
         <div class="page__content-sidebar w-full md:w-1/3">
+
             {{-- Logo --}}
             @if ($page->cover)
             <div class="card" {!! $brand !!}>
@@ -50,6 +50,10 @@
                 </div>
             </div>
             @endif
+
+            {{-- Project Launch --}}
+            <h3>Launch Date</h3>
+            <p>{{ $launched }}</p>
 
             {{-- Built with --}}
             @if ($tags)
