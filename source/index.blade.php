@@ -51,12 +51,15 @@
             <h2 class="page__hero-title md:text-left">{{ $pages->projects->title }}</h2>
             @include('_pages.projects')
         </div>
-        <div class="md:-mt-16 bg-white lg:p-8 mb-12 projects cards justify-around rounded shadow-lg page__content md:w-2/3 lg:w-3/4">
+        <div class="md:-mt-16 bg-gray-300 lg:p-8 mb-12 projects cards justify-start rounded shadow-lg page__content md:w-2/3 lg:w-3/4">
             @foreach ($projects as $project)
                 @if($project->featured)
                     @include('_components.project-card', ['project' => $project, 'class' => 'featured lg:w-1/2'])
-                @else
-                    @include('_components.project-card', ['project' => $project, 'class' => 'lg:w-1/3'])
+                @endif
+            @endforeach
+            @foreach ($projects as $project)
+                @if(!$project->featured)
+                    @include('_components.project-card', ['project' => $project, 'class' => 'lg:w-1/4'])
                 @endif
             @endforeach
         </div>

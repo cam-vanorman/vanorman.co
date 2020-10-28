@@ -84,6 +84,10 @@
     @apply text-tertiary;
   }
 
+  ul {
+    @apply ml-5 list-outside list-disc;
+  }
+
   &-body,
   &-sidebar {
     @apply px-8 py-8 w-full;

@@ -29,7 +29,8 @@
             @endif
         </div>
     </div>
-    <div class="md:-mt-16 p-0 page__content rounded">
+
+    <div class="md:-mt-16 page__content rounded bg-white shadow-2xl md:p-8">
         @if ($image)
         <a href="{{ $page->url }}" class="block" rel="nofollow noopener" target="_blank">
             <img class="mx-auto mb-2 rounded" src="{{ $image }}" alt="{{ $title }} cover image">
@@ -52,8 +53,8 @@
             @endif
 
             {{-- Project Launch --}}
-            <h3>Launch Date</h3>
-            <p>{{ $launched }}</p>
+            <h3>Launched</h3>
+            <p class="tag m-0">{{ $launched }}</p>
 
             {{-- Built with --}}
             @if ($tags)

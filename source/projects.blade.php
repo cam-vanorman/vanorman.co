@@ -23,7 +23,7 @@
             <h2 class="page__hero-title md:text-left">Featured Projects</h2>
             @include('_content.featured-projects')
         </div>
-        <div class="md:-mt-16 bg-white md:p-8 mb-12 projects cards justify-around rounded shadow-2xl page__content md:w-2/3 lg:w-3/4">
+        <div class="md:-mt-16 bg-gray-300 md:p-8 mb-12 projects cards justify-around rounded shadow-2xl page__content md:w-2/3 lg:w-3/4">
             @foreach($projects as $project)
                 @if($project->featured)
                     @include('_components.project-card', ['project' => $project, 'class' => 'featured lg:w-1/2'])

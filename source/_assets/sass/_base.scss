@@ -1,7 +1,7 @@
 body {
     font-size: 17px;
 
-    @apply flex flex-col justify-between min-h-screen leading-normal bg-steel-blue text-tertiary font-sans font-normal;
+    @apply flex flex-col justify-between min-h-screen leading-normal bg-steel-blue bg-fixed text-tertiary font-sans font-normal;
 
     @extend .bg--pattern-circuit;
 }

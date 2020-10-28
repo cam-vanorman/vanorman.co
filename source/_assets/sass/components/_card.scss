@@ -9,7 +9,7 @@
 .card {
   transition: all 0.35s linear;
 
-  @apply relative flex-1 rounded shadow-xl bg-steel-blue mb-5 mx-auto;
+  @apply relative flex-1 rounded shadow-xl bg-white mb-5 mx-auto;
 
   .featured & {
     @apply shadow-2xl;
@@ -37,6 +37,10 @@
 
     .project & {
       @apply h-32;
+    }
+
+    .tag {
+      @apply text-xs;
     }
   }
 

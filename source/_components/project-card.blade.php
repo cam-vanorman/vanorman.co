@@ -32,13 +32,13 @@
 
             <div class="card__body {{ ($project->featured ? 'md:border-l-8 md:border-secondary' : '') }}">
                 {{-- Title --}}
-                <h3 class="card__title mb-0">
+                <h3 class="card__title">
                     {{ $title }}
                 </h3>
 
                 {{-- Launched --}}
                 @if($launched)
-                <p class="text-xs m-0">{{ $launched }}</p>
+                    <p class="card__body--text">{{ $launched }}</p>
                 @endif
             </div>
         </a>
