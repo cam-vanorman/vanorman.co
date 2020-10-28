@@ -21,7 +21,7 @@ return [
         ],
         'projects' => [
             'content_model' => 'projects',
-            'sort' => '-launched',
+            'sort' => ['-featured', '-launched'],
             'path' => 'project/{filename}',
             'extends' => '_layouts.project',
         ],
