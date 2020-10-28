@@ -1,12 +1,13 @@
 @php
-    $title    = ($page->title ?? false);
-    $image    = ($page->image ?? false);
-    $slug     = ($page->slug ? '_projects.' . $page->slug : false);
-    $url      = ($page->url ? strtok($page->url, '?'): false);
-    $content  = ($page->content ?? false);
-    $tags     = ($page->tags() ?? false);
-    $brand    = ($page->brand ? 'style="background-color: #' . $page->brand . ' !important;"' : false);
-    $launched = ($page->launched ? date('F Y', $page->launched) : false);
+    $title            = ($page->title ?? false);
+    $image            = ($page->image ?? false);
+    $slug             = ($page->slug ? '_projects.' . $page->slug : false);
+    $url              = ($page->url ? strtok($page->url, '?'): false);
+    $content          = ($page->content ?? false);
+    $tags             = ($page->tags() ?? false);
+    $brand            = ($page->brand ? 'style="background-color: #' . $page->brand . ' !important;"' : false);
+    $launched         = ($page->launched ? date('F Y', $page->launched) : false);
+    $metaDescription  = ($page->metaDescription ?? false);
 @endphp
 
 @extends('_layouts.master')
@@ -16,7 +17,7 @@
         'title' => $page->title,
         'type'  => 'article',
         'url' => $page->getUrl(),
-        'description' => $page->body
+        'description' => $metaDescription
     ])
 @endpush
 
