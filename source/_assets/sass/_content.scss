@@ -3,26 +3,26 @@
 }
 
 .page__hero {
-  @apply bg-tertiary text-steel-blue px-4;
+  @apply bg-tertiary text-steel-blue px-1 py-1 shadow-2xl;
 
   @screen md {
-    @apply flex justify-center items-center px-8;
+    @apply flex justify-center items-center px-3 py-1;
   }
 
   &-wrap {
-    @apply w-full block text-center text-lg py-8 px-4 max-w-5xl;
+    @apply w-full block text-center text-lg py-3 px-3 max-w-5xl;
 
     @screen md {
-      @apply mb-16 text-xl;
+      @apply mb-16 text-xl py-6 max-w-3xl;
     }
 
-    a:hover {
+    p a:hover {
       @apply text-steel-blue;
     }
   }
 
   &-title {
-    @apply max-w-3xl text-center mx-auto capitalize mt-0 mb-1;
+    @apply capitalize mt-0 mb-1;
   }
 
   &-subtitle {
@@ -47,7 +47,7 @@
   }
 
   &-content {
-    @apply block w-full h-full mt-0 py-6 px-4 z-10 bg-white shadow-lg rounded;
+    @apply block w-full h-full mt-0 py-3 px-3 z-10 text-lg bg-white shadow-lg rounded;
 
     @screen md {
       @apply flex flex-col w-2/3 -ml-16 mt-8 p-6;
@@ -72,7 +72,11 @@
 }
 
 .page__content {
-  @apply max-w-screen-lg mb-8 mx-auto py-8 text-tertiary;
+  @apply max-w-screen-lg mb-8 mx-auto py-6 text-tertiary;
+
+  @screen md {
+    @apply py-3;
+  }
 
   h1,
   h2,
@@ -110,6 +114,6 @@
   }
 
   & iframe {
-    @apply absolute top-0 left-0 w-full h-full;
+    @apply absolute top-0 left-0 w-full h-full rounded;
   }
 }

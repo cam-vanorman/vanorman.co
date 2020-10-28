@@ -21,7 +21,7 @@
 @endpush
 
 @section('body')
-    <div class="page__hero">
+    <div class="page__hero shadow-2xl">
         <div class="page__hero-wrap">
             <h1 class="page__hero-title">{{ $title }}</h1>
             @if ($url)
@@ -36,7 +36,7 @@
         </a>
         @endif
     </div>
-    <div class="md:flex bg-white rounded shadow-lg page__content">
+    <div class="md:flex bg-white rounded shadow-2xl page__content">
         <div class="page__content-body w-full md:w-2/3">
             @include($slug)
         </div>

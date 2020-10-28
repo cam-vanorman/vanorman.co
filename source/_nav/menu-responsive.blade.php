@@ -35,17 +35,6 @@
                         href="/{{ $pages->projects->getUrl() }}"
                         class="nav-menu__item transition duration-300"
                     >{{ $pages->projects->title }}</a>
-                    <ul class="mb-3">
-                        @foreach($projects as $project)
-                            <li>
-                                <a
-                                    title="{{ $project->title }}"
-                                    href="{{ $project->getUrl() }}"
-                                    class="nav-menu__item py-2 text-sm transition duration-300"
-                                >{{ $project->title }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
                 </li>
                 <li>
                     <a
@@ -56,8 +45,5 @@
                 </li>
             </ul>
         </nav>
-        <div class="absolute bottom-0 left-0 right-0 p-6">
-            <p class="mb-0 mx-auto text-steel-blue text-center text-xs">&copy; {{ $page->site['name'] }}</p>
-        </div>
 	</div>
 </section>

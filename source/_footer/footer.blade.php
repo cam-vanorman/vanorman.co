@@ -1,7 +1,7 @@
 <footer class="page__footer">
   <div class="page__footer-text">
     <div class="container cards">
-      @if($page->getPath() !== '/contact')
+      @if($page->getPath() !== '/contact' || $page->getPath() !== '/projects')
         {{-- To-Do: Build into contentful --}}
         @php
           $cta_title   = 'Need an experienced ' . $page->site['role'] . '?';
@@ -35,7 +35,7 @@
       <h3 class="menu__title">Around the site</h3>
       <ul class="m-0 list-reset">
         <li class="menu__item">
-          <a title="{{ $pages->projects->title }}" href="{{ $pages->projects->slug }}"
+          <a title="{{ $pages->projects->title }}" href="/{{ $pages->projects->slug }}"
               class="text-steel-blue hover:text-secondary">
               {{ $pages->projects->title }}
           </a>

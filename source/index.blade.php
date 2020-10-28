@@ -25,19 +25,19 @@
                 <img src="{{ $pages->index->image }}" alt="Image of {{ $page->site['name'] }}">
                 <span class="hidden sr-only">{{ $page->site['name'] }}</span>
             </div>
-            <div class="page__header-content section__title text-center md:text-justify">
-                <h2 class="sm:text-left">{{ $pages->about->title }}</h2>
+            <div class="page__header-content section__title text-center md:text-left">
+                <h2 class="">{{ $pages->about->title }}</h2>
                 @include('_pages.about')
             </div>
         </div>
     </div>
 
     <div class="page__hero mb-12 md:mb-24 flex-row-reverse">
-        <div class="page__hero-wrap md:p-8 md:text-left md:w-1/3 lg:w-1/4">
+        <div class="page__hero-wrap lg:p-8 md:text-left md:w-1/2">
             <h2 class="page__hero-title md:text-left">{{ $pages['digitalocean-dev-talk']->title }}</h2>
             @include('_pages.digitalocean-dev-talk')
         </div>
-        <div class="md:-mt-16 bg-white p-8 mb-12 cards justify-around rounded shadow-lg page__content md:w-2/3 lg:w-3/4 video__embed h-64 md:h-screen">
+        <div class="md:-mt-16 bg-white lg:p-8 mb-12 cards justify-around rounded shadow-lg page__content md:w-1/2 video__embed h-64 md:h-screen">
              @include('_components.youtube-embed', [
                 'embed' => $pages['digitalocean-dev-talk']->embeddedMedia,
             ])
@@ -46,24 +46,28 @@
 
     {{-- Work --}}
     <div class="page__hero mb-12 md:mb-24">
-        <div class="page__hero-wrap md:p-8 md:text-left md:w-1/3 lg:w-1/4">
+        <div class="page__hero-wrap lg:p-8 md:text-left md:w-1/3 lg:w-1/4">
             <h2 class="page__hero-title md:text-left">{{ $pages->projects->title }}</h2>
             @include('_pages.projects')
         </div>
-        <div class="md:-mt-16 bg-white p-8 mb-12 cards justify-around rounded shadow-lg page__content md:w-2/3 lg:w-3/4">
+        <div class="md:-mt-16 bg-white lg:p-8 mb-12 projects cards justify-around rounded shadow-lg page__content md:w-2/3 lg:w-3/4">
             @foreach ($projects as $project)
-                    @include('_components.project-card', ['project' => $project])
+                @if($project->featured)
+                    @include('_components.project-card', ['project' => $project, 'class' => 'featured lg:w-1/2'])
+                @else
+                    @include('_components.project-card', ['project' => $project, 'class' => 'lg:w-1/3'])
+                @endif
             @endforeach
         </div>
     </div>
 
     {{-- Expertise --}}
     <div class="page__hero md:flex-row-reverse">
-        <div class="page__hero-wrap md:p-8 md:text-left md:w-1/3 lg:w-1/4">
+        <div class="page__hero-wrap lg:p-8 md:text-left md:w-1/3 lg:w-1/4">
             <h2 class="page__hero-title md:text-left">{{ $pages->skills->title }}</h2>
             @include('_pages.skills')
         </div>
-        <div class="md:-mt-16 bg-white p-8 mb-12 rounded shadow-lg page__content md:w-2/3 lg:w-3/4 md:flex md:flex-wrap">
+        <div class="md:-mt-16 bg-white lg:p-8 mb-12 rounded shadow-lg page__content md:w-2/3 lg:w-3/4 md:flex md:flex-wrap">
             @include('_components.skills', ['skill' => $skill])
         </div>
     </div>

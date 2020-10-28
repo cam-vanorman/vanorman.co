@@ -9,7 +9,11 @@
 .card {
   transition: all 0.35s linear;
 
-  @apply relative flex-1 rounded shadow-lg bg-white mb-5 mx-auto;
+  @apply relative flex-1 rounded shadow-xl bg-steel-blue mb-5 mx-auto;
+
+  .featured & {
+    @apply shadow-2xl;
+  }
 
   &:not(.card__hover):hover {
     @apply shadow bg-tertiary text-steel-blue;

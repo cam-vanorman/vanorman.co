@@ -19,7 +19,11 @@
 
     <div class="projects cards justify-center pt-10">
         @foreach ($projects as $project)
-            @include('_components.project-card', ['project' => $project])
+            @if($project->featured)
+                @include('_components.project-card', ['project' => $project, 'class' => 'md:w-1/2'])
+            @else
+                @include('_components.project-card', ['project' => $project, 'class' => 'md:w-1/3'])
+            @endif
         @endforeach
     </div>
 @stop

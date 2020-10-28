@@ -19,7 +19,7 @@
     </style>
 @endpush
 
-<div class="project card__block">
+<div class="project card__block {{ $class }}">
     <div class="card {{ $brand }} {!! $hover !!}">
         <a
             href="{{ $projectUrl }}"
@@ -30,10 +30,13 @@
                 <img class="card__img w-full px-2 m-auto" src="{{ $cover }}" alt="{{ $title }} Image">
             @endif
 
-            <div class="card__body">
+            <div class="card__body {{ ($project->featured ? 'md:border-l-8 md:border-secondary' : '') }}">
+                {{-- Title --}}
                 <h3 class="card__title mb-0">
                     {{ $title }}
                 </h3>
+
+                {{-- Launched --}}
                 @if($launched)
                 <p class="text-xs m-0">{{ $launched }}</p>
                 @endif

@@ -1,17 +1,17 @@
 .btn {
   transition: 0.35s ease;
 
-  @apply inline-block font-extrabold font-mono cursor-pointer my-5 px-3 py-1 uppercase rounded bg-secondary text-tertiary text-center;
+  @apply inline-block font-extrabold font-mono cursor-pointer my-5 px-3 py-1 uppercase rounded border-2 bg-secondary text-tertiary text-center;
 
   &:hover {
-    @apply bg-tertiary text-steel-blue;
+    @apply bg-white border-tertiary text-tertiary;
   }
 
   &--primary {
-    @apply bg-secondary border-none text-steel-blue;
+    @apply bg-secondary border-secondary text-steel-blue;
 
     &:hover {
-      @apply bg-tertiary text-steel-blue text-gray-500;
+      @apply bg-white border-tertiary text-tertiary;
     }
   }
 }
