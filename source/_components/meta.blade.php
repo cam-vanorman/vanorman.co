@@ -1,3 +1,5 @@
+<title>{{ $page->site['name'] }} – {{ $page->site['role'] }}{{ $title ? ' | ' . $title : '' }}</title>
+
 <meta name="description" content="{{ $description ? $description : $page->site['description'] }}">
 
 <meta property="og:title" content="{{ $title ?  $title . ' | ' : '' }}{{ $page->site['name'] }}"/>

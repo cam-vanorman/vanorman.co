@@ -5,10 +5,12 @@
 @endphp
 
 @push('meta')
-    <meta property="og:title" content="Contact {{ $page->site['name'] }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ $page->getUrl() }}"/>
-    <meta property="og:description" content="Get in touch with {{ $page->site['name'] }}" />
+    @include('_components.meta', [
+        'title' => 'Contact Me',
+        'type'  => 'article',
+        'url' => $page->getUrl(),
+        'description' => 'Leave a message, keep your spam'
+    ])
 @endpush
 
 @section('body')
@@ -18,7 +20,7 @@
             <h1 class="page__hero-title">Contact Me</h1>
         </div>
     </div>
-    <div class="md:-mt-20 bg-white px-8 mb-12 rounded shadow-lg page__content">
+    <div class="md:-mt-16 mb-12 md:mb-24 px-8 bg-white rounded shadow-lg page__content">
 
         <form action="{!! $contact !!}" method="POST" class="mb-12 mt-3 max-w-xl mx-auto py-8 px-3">
             <div class="flex flex-wrap mb-6 -mx-3">

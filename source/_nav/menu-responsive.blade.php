@@ -32,7 +32,7 @@
                 <li>
                     <a
                         title="{{ $pages->projects->title }}"
-                        href="/{{ $pages->projects->getUrl() }}"
+                        href="/{{ $pages->projects->slug }}"
                         class="nav-menu__item transition duration-300"
                     >{{ $pages->projects->title }}</a>
                 </li>

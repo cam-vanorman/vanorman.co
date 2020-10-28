@@ -8,8 +8,6 @@
         {{-- Meta --}}
         @stack('meta')
 
-        <title>{{ $page->site['name'] }} – {{ $page->site['role'] }}{{ $page->title ? ' | ' . $page->title : '' }}</title>
-
         <link rel="home" href="{{ $page->baseUrl }}">
 
         @include('_components.favicon')
