@@ -26,12 +26,13 @@
                 <span class="hidden sr-only">{{ $page->site['name'] }}</span>
             </div>
             <div class="page__header-content section__title text-center md:text-left">
-                <h2 class="">{{ $pages->about->title }}</h2>
+                <h2>{{ $pages->about->title }}</h2>
                 @include('_pages.about')
             </div>
         </div>
     </div>
 
+     {{-- DigitalOcean Dev Talk --}}
     <div class="page__hero mb-12 md:mb-24 flex-row-reverse">
         <div class="page__hero-wrap lg:p-8 md:text-left md:w-1/2">
             <h2 class="page__hero-title md:text-left">{{ $pages['digitalocean-dev-talk']->title }}</h2>
@@ -62,7 +63,7 @@
     </div>
 
     {{-- Expertise --}}
-    <div class="page__hero md:flex-row-reverse">
+    <div class="page__hero mb-12 md:mb-24 md:flex-row-reverse">
         <div class="page__hero-wrap lg:p-8 md:text-left md:w-1/3 lg:w-1/4">
             <h2 class="page__hero-title md:text-left">{{ $pages->skills->title }}</h2>
             @include('_pages.skills')
