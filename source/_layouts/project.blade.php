@@ -14,10 +14,11 @@
 
 @push('meta')
     @include('_components.meta', [
-        'title' => $page->title,
+        'title' => $title,
         'type'  => 'article',
+        'image' => $image,
         'url' => $page->getUrl(),
-        'description' => $metaDescription
+        'description' => $metaDescription,
     ])
 @endpush
 
