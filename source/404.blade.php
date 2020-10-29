@@ -34,7 +34,7 @@
             <h2>Oh dear, what an embarassment this is.</h2>
         </div>
         <div class="md:-mt-16 bg-white p-3 text-center lg:p-8 mb-12 rounded shadow-lg page__content md:w-1/3">
-             Feel free to navigate back to the <a href="/">homepage</a>. Apologies for the inconvenience and have a wonderful rest of your day.<br>
+            <p>Feel free to navigate back to the <a href="/">homepage</a>. Apologies for the inconvenience and have a wonderful rest of your day.</p>
 
              <a href="/" class="btn btn--primary block">Home</a>
         </div>
