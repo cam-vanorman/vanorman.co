@@ -26,6 +26,9 @@ module.exports = {
       padding: '1rem',
     },
     extend: {
+      height: {
+        'half': '50vh',
+      },
       colors: {
         'transparent': 'transparent',
         'primary': '#23478d',

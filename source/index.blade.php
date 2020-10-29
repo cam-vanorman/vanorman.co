@@ -38,7 +38,7 @@
             <h2 class="page__hero-title md:text-left">{{ $pages['digitalocean-dev-talk']->title }}</h2>
             @include('_pages.digitalocean-dev-talk')
         </div>
-        <div class="md:-mt-16 bg-white lg:p-8 mb-12 cards justify-around rounded shadow-lg page__content md:w-1/2 video__embed h-64 md:h-screen">
+        <div class="md:-mt-16 bg-white lg:p-8 mb-12 cards justify-around rounded shadow-lg page__content md:w-1/2 video__embed h-64 md:h-half">
              @include('_components.youtube-embed', [
                 'embed' => $pages['digitalocean-dev-talk']->embeddedMedia,
             ])
