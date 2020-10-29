@@ -10,6 +10,7 @@ return [
         'logo' => getenv('SITE_LOGO'),
         'role' => getenv('SITE_ROLE'),
         'location' => getenv('SITE_LOCATION'),
+        '404'      => getenv('SITE_404'),
     ],
 
     // collections
