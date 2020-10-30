@@ -33,6 +33,7 @@
     </div>
   </div>
   <div class="copyright">
+    @include('_components.social')
     <p class="mb-0">&copy; {{ $page->site['name'] }}</p>
   </div>
 </footer>

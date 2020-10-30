@@ -1,4 +1,7 @@
 import 'alpinejs';
+import feather from 'feather-icons';
+
+feather.replace()
 
 // window.axios = require('axios');
 // window.fuse = require('fuse.js');

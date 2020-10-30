@@ -69,16 +69,16 @@
     <nav class="text-center container md:flex md:justify-between md:items-center md:text-base">
         <div>
             @if ($next = $page->getNext())
-                <a class="text-lg p-3 btn btn--primary" href="{{ $next->getUrl() }}" title="Older Project: {{ $next->title }}">
-                    &LeftArrow; {{ $next->title }}
+                <a class="text-xs btn btn--primary" href="{{ $next->getUrl() }}" title="Older Project: {{ $next->title }}">
+                    <i class="inline-block w-4" data-feather="arrow-left"></i> {{ $next->title }}
                 </a>
             @endif
         </div>
 
         <div>
             @if ($previous = $page->getPrevious())
-                <a class="text-lg p-3 btn btn--primary" href="{{ $previous->getUrl() }}" title="Newer Project: {{ $previous->title }}">
-                    {{ $previous->title }} &RightArrow;
+                <a class="text-xs btn btn--primary" href="{{ $previous->getUrl() }}" title="Newer Project: {{ $previous->title }}">
+                    {{ $previous->title }} <i class="inline-block w-4" data-feather="arrow-right"></i>
                 </a>
             @endif
         </div>

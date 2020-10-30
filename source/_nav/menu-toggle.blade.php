@@ -31,7 +31,7 @@
                 this.toggleOverlay()
                 },
                 toggleOverlay() {
-                document.body.classList[this.open ? 'add' : 'remove']('h-screen', 'overflow-hidden')
+                document.body.classList[this.open ? 'add' : 'remove']('overflow-hidden')
                 }
             }
         }

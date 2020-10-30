@@ -28,22 +28,25 @@
         </button>
 
         <nav class="py-16">
-            <ul class="list-reset mb-3">
+            <ul class="list-reset mb-3 text-center">
                 <li>
                     <a
                         title="{{ $pages->projects->title }}"
                         href="/{{ $pages->projects->slug }}"
-                        class="nav-menu__item transition duration-300"
+                        class="nav-menu__item transition duration-300 hover:text-steel-blue"
                     >{{ $pages->projects->title }}</a>
                 </li>
                 <li>
                     <a
                         title="Contact Me"
                         href="/contact"
-                        class="nav-menu__item transition duration-300"
+                        class="nav-menu__item transition duration-300 hover:text-steel-blue"
                     >Contact Me</a>
                 </li>
             </ul>
+            <div class="text-center px-3">
+                @include('_components.social')
+            </div>
         </nav>
 	</div>
 </section>

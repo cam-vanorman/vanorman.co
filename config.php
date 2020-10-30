@@ -26,12 +26,16 @@ return [
             'path' => 'project/{filename}',
             'extends' => '_layouts.project',
         ],
+        'content' => [
+            'content_model' => 'content',
+        ],
         'skill' => [
             'content_model' => 'skill',
             'sort' => 'title',
         ],
-        'content' => [
-            'content_model' => 'content',
+        'socialNetworks' => [
+            'content_model' => 'socialNetworks',
+            'sort' => 'title',
         ],
     ],
 

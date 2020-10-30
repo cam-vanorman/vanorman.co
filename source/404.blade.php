@@ -17,20 +17,16 @@
         </div>
     </div>
 
-    {{-- <div class="md:-mt-16 bg-gray-300 lg:p-8 mb-12 projects cards justify-start rounded shadow-lg page__content">
-    </div> --}}
-
-    <div class="page__hero shadow-2xl mt-12 md:mt-24 mb-12 md:mb-24">
-        <div class="page__hero-wrap lg:p-8 md:text-left md:w-1/2 lg:w-2/3 cards justify-start">
-            <div class="mx-auto bg-transparent shadow-none">
-                <img class="card__img rounded" src="{{ $page->site['404']}}" alt="404 Page not found">
+    <div class="md:-mt-16 mb-12 p-0 page__content container">
+        <div class="page__header">
+            <div class="page__header-image">
+                <img class="card__img rounded" src="{{ $content['404']->image }}" alt="404 Page not found GIF">
             </div>
-        </div>
-        <div class="md:-mt-16 bg-white p-3 text-center lg:p-8 mb-12 rounded shadow-lg page__content md:w-1/2 lg:w-1/3">
-            <h2>Oh dear, what an embarassment this is.</h2>
-            <p>Feel free to navigate back to the <a href="/">homepage</a>. Apologies for the inconvenience and have a wonderful rest of your day.</p>
+            <div class="md:-ml-3 page__header-content section__title text-center">
+                @include('_content.404')
 
-             <a href="/" class="btn btn--primary block">Home</a>
+                <a href="/" class="btn btn--primary block"><i class="inline w-4" data-feather="arrow-left"></i> Home</a>
+            </div>
         </div>
     </div>
 @endsection
