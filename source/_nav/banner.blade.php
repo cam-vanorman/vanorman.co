@@ -1,5 +1,5 @@
 <header class="banner" role="banner">
-    <div class="container flex items-center max-w-screen-xl mx-auto">
+    <div class="container flex items-center mx-auto">
         <div class="flex flex-1 items-center">
             <a href="/" title="{{ $page->site['name'] }} home" class="inline-block px-3">
                 @if(!$page->site['logo'])

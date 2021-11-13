@@ -1,4 +1,4 @@
-@extends('_layouts.master')
+@extends('_layouts.main')
 
 @php
     $contact = getenv('CONTACT_FORM') ?? getenv('CONTACT_FORM')

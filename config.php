@@ -1,5 +1,7 @@
 <?php
 
+use App\Contentful\ContentfulCollection;
+
 return [
     'baseUrl' => getenv('BASE_URL'),
     'production' => false,
@@ -10,21 +12,31 @@ return [
         'logo' => getenv('SITE_LOGO'),
         'role' => getenv('SITE_ROLE'),
         'location' => getenv('SITE_LOCATION'),
-        '404'      => getenv('SITE_404'),
+        '404' => getenv('SITE_404'),
     ],
 
     // collections
     'collections' => [
         'pages' => [
-            'content_model' => 'page',
-            'sort' => '-publishDate',
-            'path' => '{filename}',
+            'path' => '{pageTemplateSlug}',
+            'extends' => '_layouts.pages',
+            'items' => function ($config) {
+                return (new ContentfulCollection(
+                    getenv('CONTENTFUL_ACCESS_TOKEN'),
+                    getenv('CONTENTFUL_SPACE_ID')
+                ))->getWebPages();
+            },
         ],
         'projects' => [
-            'content_model' => 'projects',
             'sort' => ['-featured', '-launched'],
-            'path' => 'project/{filename}',
+            'path' => 'project/{slug}',
             'extends' => '_layouts.project',
+            'items' => function ($config) {
+                return (new ContentfulCollection(
+                    getenv('CONTENTFUL_ACCESS_TOKEN'),
+                    getenv('CONTENTFUL_SPACE_ID')
+                ))->getProjects();
+            },
         ],
         'content' => [
             'content_model' => 'content',

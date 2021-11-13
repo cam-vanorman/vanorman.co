@@ -1,7 +1,10 @@
 import 'alpinejs';
+import navMenu from './components/navMenu';
 import feather from 'feather-icons';
 
 feather.replace()
+
+window.navMenu = navMenu;
 
 // window.axios = require('axios');
 // window.fuse = require('fuse.js');

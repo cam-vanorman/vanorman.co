@@ -65,12 +65,13 @@ module.exports = {
       },
       boxShadow: {
         'lg': '0 -1px 27px 0 rgba(0, 0, 0, 0.04), 0 4px 15px 0 rgba(0, 0, 0, 0.08)',
+        'inner': 'inset 0 -0.125em 0 0 rgba(0, 0, 0, 0.08), inset 0 -0.375em 0 0 rgba(0, 0, 0, 0.1)'
       },
     },
     fontSize: {
-      'xs': '.8rem',
-      'sm': '.925rem',
-      'base': '1rem',
+      'xs': '.725rem',
+      'sm': '.8rem',
+      'base': '.925rem',
       'lg': '1.125rem',
       'xl': '1.25rem',
       '2xl': '1.5rem',
@@ -84,7 +85,7 @@ module.exports = {
     borderRadius: ['responsive', 'focus'],
     borderWidth: ['responsive', 'active', 'focus'],
     gridAutoFlow: ['responsive', 'hover', 'focus'],
-    width: ['responsive', 'focus']
+    width: ['responsive', 'focus'],
   },
   plugins: [
     function ({ addUtilities }) {

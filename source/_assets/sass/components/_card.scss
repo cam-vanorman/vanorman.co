@@ -20,7 +20,7 @@
   }
 
   &__block {
-    @apply w-full h-full px-3;
+    @apply w-full h-auto px-3;
 
     @screen md {
       @apply w-1/2;

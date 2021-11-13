@@ -1,5 +1,5 @@
-@extends('_layouts.master')
-
+{{-- @dump($page->collections->pages->items) --}}
+@extends('_layouts.main')
 @push('meta')
     @include('_components.meta', [
         'title' => $page->title,
@@ -9,17 +9,19 @@
     ])
 @endpush
 
+
 @section('body')
+    {{-- {{ dump($pages) }} --}}
     {{-- Introduction --}}
-    <div class="page__hero">
+    {{-- <div class="page__hero">
         <div class="page__hero-wrap">
             <h1>{{ $pages->index->title }}</h1>
             @include('_pages.index')
         </div>
-    </div>
+    </div> --}}
 
     {{-- About --}}
-    <div class="md:-mt-16 mb-12 p-0 page__content container">
+    {{-- <div class="md:-mt-16 mb-12 p-0 page__content container">
         <div class="page__header">
             <div class="page__header-image">
                 <img src="{{ $pages->index->image }}" alt="Image of {{ $page->site['name'] }}">
@@ -30,10 +32,10 @@
                 @include('_pages.about')
             </div>
         </div>
-    </div>
+    </div> --}}
 
      {{-- DigitalOcean Dev Talk --}}
-    <div class="page__hero mb-12 md:mb-24 flex-row-reverse">
+    {{-- <div class="page__hero mb-12 md:mb-24 flex-row-reverse">
         <div class="page__hero-wrap lg:p-8 md:text-left md:w-1/2">
             <h2 class="page__hero-title md:text-left">{{ $pages['digitalocean-dev-talk']->title }}</h2>
             @include('_pages.digitalocean-dev-talk')
@@ -43,10 +45,10 @@
                 'embed' => $pages['digitalocean-dev-talk']->embeddedMedia,
             ])
         </div>
-    </div>
+    </div> --}}
 
     {{-- Work --}}
-    <div class="page__hero mb-12 md:mb-24">
+    {{-- <div class="page__hero mb-12 md:mb-24 container">
         <div class="page__hero-wrap lg:p-8 md:text-left md:w-1/3 lg:w-1/4">
             <h2 class="page__hero-title md:text-left">{{ $pages->projects->title }}</h2>
             @include('_pages.projects')
@@ -63,10 +65,10 @@
                 @endif
             @endforeach
         </div>
-    </div>
+    </div> --}}
 
     {{-- Expertise --}}
-    <div class="page__hero mb-12 md:mb-24 md:flex-row-reverse">
+    {{-- <div class="page__hero mb-12 md:mb-24 md:flex-row-reverse">
         <div class="page__hero-wrap lg:p-8 md:text-left md:w-1/3 lg:w-1/4">
             <h2 class="page__hero-title md:text-left">{{ $pages->skills->title }}</h2>
             @include('_pages.skills')
@@ -74,5 +76,5 @@
         <div class="md:-mt-16 bg-white lg:p-8 mb-12 rounded shadow-lg page__content md:w-2/3 lg:w-3/4 md:flex md:flex-wrap">
             @include('_components.skills', ['skill' => $skill])
         </div>
-    </div>
+    </div> --}}
 @stop

@@ -28,14 +28,7 @@
 
 .mc-field-group {
     input {
-        @apply .float-left;
-        @apply .leading-normal;
-        @apply .mb-6;
-        @apply .outline-none;
-        @apply .px-4;
-        @apply .py-2;
-        @apply .rounded-l;
-        @apply .w-2/3;
+        @apply float-left leading-normal mb-6 outline-none px-4 py-2 rounded-l w-2/3;
 
         @screen md {
             @apply .mb-3;

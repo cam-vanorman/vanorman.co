@@ -4,19 +4,23 @@
 	@open-menu.window="open = $event.detail.open"
 	@keydown.window.tab="usedKeyboard = true"
 	@keydown.escape="open = false"
-	x-init="init()">
+	x-init="init()"
+>
 	<div
 		x-show.transition.opacity.duration.500="open"
 		@click="open = false"
-		class="fixed inset-0 bg-black bg-opacity-25 z-50"></div>
+		class="fixed inset-0 bg-black bg-opacity-25 z-50"
+    ></div>
 	<div
 		class="nav-menu transition shadow-2xl"
-		:class="{'translate-x-full': !open}">
+		:class="{'translate-x-full': !open}"
+    >
 		<button
 			@click="open = false"
 			x-ref="closeButton"
 			:class="{'focus:outline-none': !usedKeyboard}"
-			class="absolute top-0 right-0 mr-4 mt-2">
+			class="absolute top-0 right-0 mr-4 mt-2"
+        >
             <span class="text-xs text-gray-100 pr-2 uppercase">Close Menu</span>
             <svg
                 class="inline-block fill-current text-gray-100 h-9 w-4"
@@ -34,14 +38,18 @@
                         title="{{ $pages->projects->title }}"
                         href="/{{ $pages->projects->slug }}"
                         class="nav-menu__item transition duration-300 hover:text-steel-blue"
-                    >{{ $pages->projects->title }}</a>
+                    >
+                        {{ $pages->projects->title }}
+                    </a>
                 </li>
                 <li>
                     <a
                         title="Contact Me"
                         href="/contact"
                         class="nav-menu__item transition duration-300 hover:text-steel-blue"
-                    >Contact Me</a>
+                    >
+                        Contact Me
+                    </a>
                 </li>
             </ul>
             <div class="text-center px-3">

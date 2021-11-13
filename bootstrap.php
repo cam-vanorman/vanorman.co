@@ -1,12 +1,11 @@
 <?php
 
-use App\Listeners\ContentfulFetcher;
 use Symfony\Component\Dotenv\Dotenv;
 
 /** @var $container \Illuminate\Container\Container */
 /** @var $events \TightenCo\Jigsaw\Events\EventBus */
 
-if (file_exists(__DIR__.'/.env')) {
+if (file_exists(__DIR__ . '/.env')) {
     // Load env vars from .env if that file exists
     $dotenv = new Dotenv();
     $dotenv->load(__DIR__ . '/.env');
@@ -23,6 +22,6 @@ if (file_exists(__DIR__.'/.env')) {
  * });
  */
 
-$events->beforeBuild(ContentfulFetcher::class);
+// $events->beforeBuild(ContentfulFetcher::class);
 $events->afterBuild(App\Listeners\GenerateSitemap::class);
 $events->afterBuild(App\Listeners\GenerateIndex::class);
