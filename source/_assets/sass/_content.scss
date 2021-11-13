@@ -97,12 +97,12 @@
   @screen md {
     @apply flex flex-wrap py-3;
 
-    &.flex-row-reverse > .prose {
+    &.flex-row-reverse > .prose{
       @apply -ml-4;
     }
 
     & > .prose {
-      @apply -mr-4 border border-steel-blue;
+      @apply -mr-4;
     }
   }
 

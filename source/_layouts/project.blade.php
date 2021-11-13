@@ -3,7 +3,7 @@
     $image            = ($page->image ?? false);
     $slug             = ($page->slug ? '_projects.' . $page->slug : false);
     $url              = ($page->url ? strtok($page->url, '?'): false);
-    $content          = ($page->content ?? false);
+    $content          = (include($slug) ?? false);
     $tags             = ($page->tags() ?? false);
     $brand            = ($page->brand ? 'style="background-color: #' . $page->brand . ' !important;"' : false);
     $launched         = ($page->launched ?? false);
@@ -39,6 +39,11 @@
         </div>
     </div>
 
+    <x-page-header
+        :title="$title"
+        :content="$content"
+        :image="$image"
+    />
     {{-- <div class="md:-mt-16 page__content rounded bg-white shadow-2xl md:p-8">
         @if ($image)
         <a href="{{ $page->url }}" class="block" rel="nofollow noopener" target="_blank">
@@ -49,7 +54,7 @@
     <div class="md:flex bg-white rounded shadow-2xl page__content">
         <div class="page__content-body prose w-full md:w-2/3">
             <img class="mx-auto mb-2 rounded" src="{{ $image }}" alt="{{ $title }} cover image">
-            @include($slug)
+
         </div>
         <div class="page__content-sidebar w-full md:w-1/3">
 
@@ -69,7 +74,7 @@
             {{-- Built with --}}
             @if ($tags)
                 <h3>Built With</h3>
-                @include('_components.tags', ['tags' => $tags])
+                <x-tags :tags="$tags" />
             @endif
         </div>
     </div>

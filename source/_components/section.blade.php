@@ -5,7 +5,7 @@
                 {{
                     isset($blocks) && !empty($blocks) ? 'md:w-1/3 z-10 bg-white shadow-2xl rounded'
                         : (isset($embed)
-                        ? 'md:w-1/2 text-white' : 'md:w-1/3 z-10')
+                        ? 'md:w-1/2 text-white border border-secondary rounded' : 'md:w-1/3 z-10')
                 }}
                 mb-12 w-auto p-3 md:p-8 prose
             ">
@@ -22,7 +22,7 @@
         @endif
 
         @if (isset($blocks) && !empty($blocks))
-            <div class="bg-gray-800 p-8 mb-12 projects cards justify-start rounded shadow-lg w-auto md:w-2/3">
+            <div class="border border-secondary text-steel-blue p-8 mb-12 projects cards justify-start rounded shadow-lg w-auto md:w-2/3">
                 @foreach($blocks as $block)
                     <x-block :fields="$block" />
                 @endforeach
