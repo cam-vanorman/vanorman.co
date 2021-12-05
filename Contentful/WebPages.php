@@ -3,6 +3,7 @@
 namespace App\Contentful;
 
 use App\Contentful\Concerns\RendersRichText;
+use TightenCo\Jigsaw\Jigsaw;
 use cebe\markdown\GithubMarkdown;
 
 /**
@@ -118,36 +119,46 @@ class WebPages
 
   public function mapByContentType($contentType, $reference, $fieldBlockMap)
   {
-    switch ($contentType) {
-      case 'cardGrid':
-        $fieldBlockMap['cards'] = $reference->cards;
-        break;
-      case 'callToActionComponent':
-        // dump($reference->actions);
-        // $fieldBlockMap['actions'] = $reference->actions;
-        break;
-      case 'content':
-        $fieldBlockMap['image'] = $reference->image;
-        $fieldBlockMap['embeddedMedia'] = $reference->embeddedMedia;
-        break;
-      case 'projects':
-        $fieldBlockMap['slug'] = $reference->slug;
-        $fieldBlockMap['image'] = $reference->image;
-        $fieldBlockMap['cover'] = $reference->cover;
-        $fieldBlockMap['coverWidth'] = $reference->coverWidth;
-        $fieldBlockMap['projectUrl'] = ($reference->URL ?? '');
-        $fieldBlockMap['builtWith'] = $reference->builtWith;
-        $fieldBlockMap['brand'] = $reference->slug;
-        $fieldBlockMap['brandColor'] = $reference->brand;
-        $fieldBlockMap['featured'] = ($reference->featured ?? false);
-        $fieldBlockMap['launched'] = $reference->launched;
-        break;
-      case 'skill':
-        $fieldBlockMap['skill'] = $reference->skills;
-        break;
-    }
+    $fieldBlockMap = collect($fieldBlockMap);
+    $fieldBlockMap->map(function () use ($fieldBlockMap, $reference, $contentType) {
+      switch ($contentType) {
+        case 'cardGrid':
+          if ($reference->collectionType == 'project') {
+            $fieldBlockMap->put('collection', $this->jigsaw->getCollection('projects'));
+          }
 
-    return $fieldBlockMap;
+          $fieldBlockMap->put('collectionType', strtolower($reference->collectionType));
+          $fieldBlockMap->put('featured', $reference->featured);
+          break;
+        case 'callToActionComponent':
+          // dump($reference->actions);
+          $fieldBlockMap->put('actions', $reference->actions);
+          break;
+        case 'content':
+          $fieldBlockMap->put('image', $reference->image);
+          $fieldBlockMap->put('embeddedMedia', $reference->embeddedMedia);
+          break;
+        case 'projects':
+          $fieldBlockMap->put('slug', $reference->slug);
+          $fieldBlockMap->put('image', $reference->image);
+          $fieldBlockMap->put('cover', $reference->cover);
+          $fieldBlockMap->put('coverWidth', $reference->coverWidth);
+          $fieldBlockMap->put('projectUrl', ($reference->URL ?? ''));
+          $fieldBlockMap->put('builtWith', $reference->builtWith);
+          $fieldBlockMap->put('brand', $reference->slug);
+          $fieldBlockMap->put('brandColor', $reference->brand);
+          $fieldBlockMap->put('featured', ($reference->featured ?? false));
+          $fieldBlockMap->put('launched', $reference->launched);
+          break;
+        case 'skill':
+          $fieldBlockMap->put('skill', $reference->skills);
+          break;
+      }
+
+      return $fieldBlockMap;
+    });
+
+    return $fieldBlockMap->all();
   }
 
   public function toArray()

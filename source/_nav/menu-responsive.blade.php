@@ -53,7 +53,7 @@
                 </li>
             </ul>
             <div class="text-center px-3">
-                @include('_components.social')
+                <x-social :socialNetworks="$socialNetworks" />
             </div>
         </nav>
 	</div>

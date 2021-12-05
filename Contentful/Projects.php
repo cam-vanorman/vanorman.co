@@ -23,15 +23,15 @@ class Projects
         $this->slug = $item->slug;
         $this->body = $item->body ?? null;
         $this->cover = $item->cover ?? null;
-        $this->cover_width = $item->coverWidth ?? null;
+        $this->coverWidth = $item->coverWidth ?? null;
         $this->image = $item->image ?? null;
         $this->url = $item->url ?? null;
-        $this->built_with = implode(', ', $item->builtWith) ?? null;
+        $this->builtWith = implode(', ', $item->builtWith) ?? null;
         $this->brand = '#' . $item->brand ?? null;
         $this->featured = $item->featured ?? false;
         $this->launched = $item->launched ?? null;
 
-        $this->meta_description = $item->metaDescription;
+        $this->metaDescription = $item->metaDescription;
     }
 
     public function toArray()
@@ -39,16 +39,16 @@ class Projects
         return [
             'title' => $this->title,
             'slug' => $this->slug,
-            'content' => $this->body,
+            'body' => $this->body,
             'cover' => $this->cover,
-            'cover_width' => $this->cover_width,
+            'coverWidth' => $this->coverWidth,
             'image' => $this->image,
             'url' => $this->url,
-            'built_with' => $this->built_with,
+            'builtWith' => $this->builtWith,
             'brand' =>  $this->brand,
             'featured' => $this->featured,
             'launched' => $this->launched,
-            'meta_description' => $this->meta_description,
+            'metaDescription' => $this->metaDescription,
         ];
     }
 }

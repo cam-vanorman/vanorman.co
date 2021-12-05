@@ -47,28 +47,33 @@
     {{-- Card Grid --}}
     @case('cardGrid')
         {{-- @dump($fields) --}}
-        @if (isset($fields['cards']) && !empty($fields['cards']))
-            <x-card-grid
-                :title="$fields['title']"
-                :body="$fields['body']"
-                :cards="$fields['cards']"
-                :index="$index"
-            />
+        @if (isset($fields['collectionType']) && !empty($fields['collectionType']))
+            @if($fields['collectionType'] === 'projects')
+                <x-card-grid
+                    :collectionType="$fields['collectionType']"
+                    :collection="$fields['collection']"
+                    :featured="$fields['featured']"
+                />
+            @endif
         @endif
     @break
 
     {{-- Projects --}}
     @case('projects')
+        @php
+            $project = collect([
+                'slug' => $fields['slug'],
+                'projectUrl' => $fields['projectUrl'],
+                'brand' => $fields['brand'],
+                'brandColor' => $fields['brandColor'],
+                'cover' => $fields['cover'],
+                'coverWidth' => $fields['coverWidth'],
+                'featured' => $fields['featured'],
+                'launched' => $fields['launched'],
+            ]);
+        @endphp
         <x-project-card
-            :title="$fields['title']"
-            :slug="$fields['slug']"
-            :projectUrl="$fields['projectUrl']"
-            :brand="$fields['brand']"
-            :brandColor="$fields['brandColor']"
-            :cover="$fields['cover']"
-            :coverWidth="$fields['coverWidth']"
-            :featured="$fields['featured']"
-            :launched="$fields['launched']"
+            :project="$project"
         />
     @break
 

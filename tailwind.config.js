@@ -78,7 +78,7 @@ module.exports = {
       '3xl': '1.75rem',
       '4xl': '2.125rem',
       '5xl': '2.75rem',
-      '6xl': '4rem',
+      '6xl': '3.5rem',
     },
   },
   variants: {
@@ -98,6 +98,9 @@ module.exports = {
         },
       }
       addUtilities(newUtilities)
-    }
+    },
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/aspect-ratio'),
   ]
 }

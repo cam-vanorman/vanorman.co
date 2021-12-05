@@ -49,6 +49,14 @@ return [
             'content_model' => 'socialNetworks',
             'sort' => 'title',
         ],
+        'calltoActionComponent' => [
+            'content_model' => 'calltoActionComponent',
+            'sort' => 'title',
+        ],
+        'cardGrid' => [
+            'content_model' => 'cardGrid',
+            'sort' => 'title',
+        ],
     ],
 
     'contentful' => [

@@ -1,14 +1,18 @@
 @php
-    $title      = ($title ?? $title);
-    $slug       = ($slug ?: $slug);
-    $projectUrl = ($slug ? "/project/" . $slug : $projectUrl);
-    $brand      = ($slug ? 'brand-' . $slug : '');
-    $brandColor = ($brandColor ?? $brandColor);
-    $hover      = ($brand && $cover ? 'card__hover' : '');
-    $cover      = ($cover ?: $cover);
-    $featured   = ($featured ?: $featured);
-    $launched   = ($launched ? date('F Y', $launched) : false);
-    $coverWidth = ($coverWidth ?: $coverWidth);
+    if (!$project) {
+        return;
+    }
+
+    $title      = ($project->title ?? $project->title);
+    $slug       = ($project->slug ?: $project->slug);
+    $projectUrl = ($project->slug ? "/project/" . $slug : $project->projectUrl);
+    $brand      = ($project->slug ? 'brand-' . $project->slug : '');
+    $brandColor = ($project->brandColor ?? $project->brandColor);
+    $hover      = ($project->brand && $project->cover ? 'card__hover' : '');
+    $cover      = ($project->cover ?: $project->cover);
+    $featured   = ($project->featured ?: $project->featured);
+    $launched   = ($project->launched ? date('F Y', $project->launched) : false);
+    $coverWidth = ($project->coverWidth ?: $project->coverWidth);
 @endphp
 
 {{-- Brand styles --}}

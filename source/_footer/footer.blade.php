@@ -1,9 +1,9 @@
 <footer class="page__footer">
     <div class="page__footer-text mx-auto">
         <div class="page__footer-logo">
-            <a class="md:inline-block" href="/">
+            <a class="inline-block" href="/">
                 <img
-                    class="logo__image mx-auto mb-10 sm:m-0"
+                    class="logo__image mx-auto mb-10"
                     src="{{ $page->site['logo'] }}"
                     alt="{{ $page->site['name'] }}"
                 >
@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="copyright">
-        @include('_components.social')
+        <x-social :socialNetworks="$socialNetworks" />
         <p class="mb-0">&copy; {{ $page->site['name'] }}</p>
     </div>
 </footer>

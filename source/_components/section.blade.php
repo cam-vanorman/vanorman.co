@@ -5,7 +5,7 @@
                 {{
                     isset($blocks) && !empty($blocks) ? 'md:w-1/3 z-10 bg-white shadow-2xl rounded'
                         : (isset($embed)
-                        ? 'md:w-1/2 text-white border border-secondary rounded' : 'md:w-1/3 z-10')
+                        ? 'md:w-1/3 text-white border border-secondary rounded' : 'md:w-1/3 z-10')
                 }}
                 mb-12 w-auto p-3 md:p-8 prose
             ">
@@ -16,7 +16,7 @@
         </div>
 
         @if(isset($embed))
-            <div class="md:-mt-12 mb-12 cards justify-around rounded shadow-lg md:w-1/2 w-auto video__embed h-half">
+            <div class="md:-mt-12 mb-12 rounded shadow-lg md:w-2/3 w-auto aspect-w-16 aspect-h-9">
                 <x-youtube-embed :embed="$embed" />
             </div>
         @endif

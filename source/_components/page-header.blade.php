@@ -1,4 +1,5 @@
 @php
+    $title     = (isset($title) ? $title : false);
     $className = (isset($class) ? $class : false);
     $content   = (isset($content) ? $content : false);
 @endphp
@@ -11,13 +12,15 @@
         </div>
     @endif
 
-    <div class="page__header-content mb-12 prose">
-        @if (isset($title))
-            <h2>{{ $title }}</h2>
-        @endif
+    @if (isset($title) || isset($content))
+        <div class="page__header-content mb-12 prose">
+            @if (isset($title))
+                <h2>{{ $title }}</h2>
+            @endif
 
-        @if (isset($content))
-            {!! $content !!}
-        @endif
-    </div>
+            @if (isset($content))
+                {!! $content !!}
+            @endif
+        </div>
+    @endif
 </div>
