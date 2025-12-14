@@ -8,7 +8,8 @@
                         ? 'md:w-1/3 text-white border border-secondary rounded' : 'md:w-1/3 z-10')
                 }}
                 mb-12 w-auto p-3 md:p-8 prose
-            ">
+            "
+        >
             @if ($title)
                 <h2>{{ $title }}</h2>
             @endif

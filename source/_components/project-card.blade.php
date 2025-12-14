@@ -13,14 +13,20 @@
     $featured   = ($project->featured ?: $project->featured);
     $launched   = ($project->launched ? date('F Y', $project->launched) : false);
     $coverWidth = ($project->coverWidth ?: $project->coverWidth);
+    $styles     = <<<HTML
+        <style>
+            .brand-{ $slug } { background-color: #{ $brandColor }; }
+            .brand-{ $slug } .card__img { max-width: { $coverWidth }; }
+        </style>
+HTML;
 @endphp
 
 {{-- Brand styles --}}
 @push('styles')
-    <style>
-        .brand-{{ $slug }} { background-color: #{{ $brandColor }}; }
-        .brand-{{ $slug }} .card__img { max-width: {{ $coverWidth }}; }
-    </style>
+    <!--- Brand styles --->
+    {{
+        str_replace(array("\r", "\n"), '', $styles)
+    }}
 @endpush
 
 <div class="project card__block">
@@ -30,7 +36,7 @@
             title="Visit - {{ $title }}"
             class="min-h-full"
         >
-            @if ($cover)
+            @if($cover)
                 <img class="card__img w-full px-2 m-auto" src="{{ $cover }}" alt="{{ $title }} Image">
             @endif
 

@@ -1,16 +1,15 @@
 import 'alpinejs';
+
+import siteSearch from './components/siteSearch';
 import navMenu from './components/navMenu';
+
 import feather from 'feather-icons';
 
 feather.replace()
 
 window.navMenu = navMenu;
+// window.siteSearch = siteSearch;
 
-// window.axios = require('axios');
-// window.fuse = require('fuse.js');
-// window.Vue = require('vue');
-
-// import Search from './components/Search.vue';
 // import hljs from 'highlight.js/lib/highlight';
 
 // Syntax highlighting
@@ -27,12 +26,4 @@ window.navMenu = navMenu;
 // document.querySelectorAll('pre code').forEach((block) => {
 //     hljs.highlightBlock(block);
 // });
-
-// Vue.config.productionTip = false;
-
-// new Vue({
-//     components: {
-//         Search,
-//     },
-// }).$mount('#vue-search');
 

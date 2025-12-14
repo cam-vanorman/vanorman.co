@@ -1,5 +1,5 @@
-{{-- @dump($page->collections->pages->items) --}}
 @extends('_layouts.main')
+
 @push('meta')
     @include('_components.meta', [
         'title' => $page->title,
@@ -8,7 +8,6 @@
         'description' => $page->body
     ])
 @endpush
-
 
 @section('body')
 

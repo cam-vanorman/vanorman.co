@@ -1,4 +1,5 @@
-# Portfolio starter
+# vanorman.co
+Portfolio Starter for [Jigsaw](https://jigsaw.tighten.co)
 
 This is a starter template for freelancers wanting to showcase projects/work. It's based on [Tighten.co's Jigsaw blog template.](http://jigsaw-blog-staging.tighten.co/)
 

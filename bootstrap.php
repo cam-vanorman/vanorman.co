@@ -1,15 +1,9 @@
 <?php
 
-// use Symfony\Component\Dotenv\Dotenv;
+use TightenCo\Jigsaw\Jigsaw;
 
 /** @var $container \Illuminate\Container\Container */
 /** @var $events \TightenCo\Jigsaw\Events\EventBus */
-
-// if (file_exists(__DIR__ . '/.env')) {
-//     // Load env vars from .env if that file exists
-//     $dotenv = new Dotenv();
-//     $dotenv->load(__DIR__ . '/.env');
-// }
 
 /*
  * You can run custom code at different stages of the build process by
@@ -25,3 +19,7 @@
 // $events->beforeBuild(ContentfulFetcher::class);
 $events->afterBuild(App\Listeners\GenerateSitemap::class);
 $events->afterBuild(App\Listeners\GenerateIndex::class);
+
+// $events->afterBuild(function (Jigsaw $jigsaw) {
+//   $jigsaw->projects = $jigsaw->getCollection('projects')->toArray();
+// });

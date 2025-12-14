@@ -8,18 +8,35 @@ use App\Contentful\Projects;
 use Contentful\Delivery\Query;
 use Contentful\Delivery\Client;
 
+/**
+ * Class Contentful Collection
+ *
+ * @package App\Contentful
+ *
+ */
 class ContentfulCollection
 {
     public $client;
 
-    public function __construct($apiKey, $spaceId)
+    /**
+     * ContentfulCollection constructor.
+     *
+     * @param $token
+     * @param $spaceId
+     */
+    public function __construct($token, $spaceId, $envId, $options = null)
     {
         $this->client = new Client(
-            $apiKey,
-            $spaceId
+            $token,
+            $spaceId,
+            $envId,
+            $options
         );
     }
 
+    /**
+     * Get all web pages
+     */
     public function getWebPages()
     {
         $query = (new Query)->setContentType('webPages');
@@ -30,6 +47,11 @@ class ContentfulCollection
             });
     }
 
+    /**
+     * Get all page content
+     *
+     * orderBy: -sys.createdAt
+     */
     public function getPages()
     {
         $query = (new Query)->setContentType('page')
@@ -41,6 +63,12 @@ class ContentfulCollection
             });
     }
 
+    /**
+     * Get all projects
+     *
+     * orderBy: -fields.featured
+     * orderBy: -fields.launched
+     */
     public function getProjects()
     {
         $query = (new Query)->setContentType('projects')

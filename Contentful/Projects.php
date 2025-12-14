@@ -2,6 +2,24 @@
 
 namespace App\Contentful;
 
+/**
+ * Class Projects
+ * @package App\Contentful
+ *
+ * @property string $meta_description
+ * @property string $title
+ * @property string $slug
+ * @property string $body
+ * @property string $cover
+ * @property string $cover_width
+ * @property string $image
+ * @property string $url
+ * @property array  $built_with
+ * @property string $brand
+ * @property bool $featured
+ * @property string $launched
+ *
+ */
 class Projects
 {
     protected $meta_description;

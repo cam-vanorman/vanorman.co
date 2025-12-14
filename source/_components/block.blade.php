@@ -1,13 +1,24 @@
-@switch($fields['blockType'])
-    @case('heroComponent')
+@props([
+    'fields',
+    'collections',
+    'index'
+])
+
+{{-- @dump($fields) --}}
+
+@switch ($fields['blockType'])
+    @case ('heroComponent')
         <x-hero.page
             :title="$fields['title']"
             :content="$fields['body']"
         />
     @break
-    @case('content')
+    @case ('content')
         {{-- Refactor into blockType instead of field --}}
-        @if (isset($fields['embeddedMedia']) && $fields['embeddedMedia'] != '')
+        @if (
+            isset($fields['embeddedMedia'])
+            && $fields['embeddedMedia'] != ''
+        )
             <x-section
                 :title="$fields['title']"
                 :content="$fields['body']"
@@ -15,14 +26,20 @@
                 :index="$index"
             />
         {{-- Refactor into blockType instead of field --}}
-        @elseif (isset($fields['image']) && $fields['image'] != '')
+        @elseif (
+            isset($fields['image'])
+            && $fields['image'] != ''
+        )
             <x-page-header
                 :title="$fields['title']"
                 :content="$fields['body']"
                 :image="$fields['image']"
                 :index="$index"
             />
-        @elseif (isset($fields['blocks']) && !empty($fields['blocks']))
+        @elseif (
+            isset($fields['blocks'])
+            && !empty($fields['blocks'])
+        )
             {{-- Generic Block section --}}
             <x-section
                 :title="$fields['title']"
@@ -34,8 +51,7 @@
     @break
 
     {{-- Call to Action Component --}}
-    @case('callToActionComponent')
-        {{-- @dump($fields) --}}
+    @case ('callToActionComponent')
         <x-cta
             :title="$fields['title']"
             :body="$fields['body']"
@@ -45,21 +61,43 @@
     @break
 
     {{-- Card Grid --}}
-    @case('cardGrid')
-        {{-- @dump($fields) --}}
-        @if (isset($fields['collectionType']) && !empty($fields['collectionType']))
-            @if($fields['collectionType'] === 'projects')
-                <x-card-grid
-                    :collectionType="$fields['collectionType']"
-                    :collection="$fields['collection']"
-                    :featured="$fields['featured']"
-                />
-            @endif
+    @case ('cardGrid')
+        @if (
+            isset($fields['collectionType'])
+            && !empty($fields['collectionType'])
+        )
+
+            @switch ($fields['collectionType'])
+                {{-- Projects --}}
+                @case ('projects')
+                    <x-card-grid
+                        :collectionType="$fields['collectionType']"
+                        :collection="$collections['projects']"
+                        :featured="$fields['featured']"
+                    />
+                @break
+                {{-- Posts --}}
+                @case ('posts')
+                    <x-card-grid
+                        :collectionType="$fields['collectionType']"
+                        :collection="$collections->posts"
+                        :featured="$fields['featured']"
+                    />
+                @break
+                {{-- Pages --}}
+                @case ('pages')
+                    <x-card-grid
+                        :collectionType="$fields['collectionType']"
+                        :collection="$collections->pages"
+                        :featured="$fields['featured']"
+                    />
+                @break
+            @endswitch
         @endif
     @break
 
     {{-- Projects --}}
-    @case('projects')
+    @case ('projects')
         @php
             $project = collect([
                 'slug' => $fields['slug'],
@@ -78,7 +116,7 @@
     @break
 
     {{-- Skill --}}
-    @case('skill')
+    @case ('skill')
         <x-skills
             :title="$fields['title']"
             :skill="$fields['skill']"

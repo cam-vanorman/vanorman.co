@@ -3,13 +3,14 @@
 namespace App\Contentful;
 
 use App\Contentful\Concerns\RendersRichText;
-use TightenCo\Jigsaw\Jigsaw;
+use \Illuminate\Support\Collection;
 use cebe\markdown\GithubMarkdown;
 
 /**
  * Class WebPages
- * @namespace App\Contentful
- * @package App\Contentful\WebPages
+ *
+ * @package App\Contentful
+ *
  * @property string $seo
  * @property GithubMarkdown $parser
  * @property string $pageTemplateName
@@ -35,7 +36,6 @@ class WebPages
         $this->pageTemplateName = $item->pageTemplateName;
         $this->pageTemplateSlug = $item->pageTemplateSlug;
         $this->pageTemplateBlocks = $this->getPageTemplateBlocks($item->pageTemplateBlocks);
-        $this->jigsaw = Jigsaw::instance();
     }
 
     /**
@@ -60,44 +60,53 @@ class WebPages
      * Get the blocks for the page template.
      *
      * @param  array $pageTemplateBlocks
-     * @param  array $blocks
-     * @return array
+     * @param  Collection $blocks
+     * @return Collection
      */
-    private function getPageTemplateBlocks($pageTemplateBlocks, array $blocks = []): array
+    private function getPageTemplateBlocks($pageTemplateBlocks, $blocks = null)
     {
-        foreach ($pageTemplateBlocks as $block) {
+        if (!is_null($blocks)) {
+            $blocks = collect();
+        }
+
+        return collect($pageTemplateBlocks)->map(function ($block) use ($blocks) {
+
             $body = ($block->body instanceof \Contentful\RichText\Node\Document
                 ? $this->renderRichTextNodes($block->body)
                 : $this->parser->parse($block->body));
 
-            $blockMap = [
+            $fieldBlocks = (!empty($block->blocks) && $block->blocks ? collect($block->blocks) : []);
+            // dump(collect($fieldBlocks));
+
+            return [
                 'blockType' => $block->getContentType()->getId(),
                 'title' =>  $block->title,
                 'body' => ($body ?? ''),
                 'image' => ($block->image ?? ''),
                 'background' => ($block->background ?? ''),
                 'embeddedMedia' => ($block->embeddedMedia ?? ''),
-                'blocks' => (!empty($block->blocks) && $block->blocks
-                    ? $this->getPageTemplateFieldBlocks($block->blocks)
+                'blocks' => (!empty($fieldBlocks)
+                    ? $this->getPageTemplateFieldBlocks($fieldBlocks)
                     : []),
             ];
-
-            array_push($blocks, $blockMap);
-        }
-
-        return $blocks;
+        });
     }
 
     /**
      * Get the blocks for the page template.
-     * @param  array $blocks
-     * @return array
+     * @param  Collection $blocks
+     * @return Collection
      */
-    public function getPageTemplateFieldBlocks($blocks, $fieldBlocks = [], $body = ''): array
+    public function getPageTemplateFieldBlocks($blocks)
     {
-        foreach ($blocks as $block) {
+        if (!$blocks) {
+            $blocks = collect();
+        }
+
+        return $blocks->map(function ($block) {
             if ($block->references) {
-                foreach ($block->references as $reference) {
+                collect($block->references)->map(function ($reference) {
+
                     if (isset($reference->body)) {
                         $body = ($reference->body instanceof \Contentful\RichText\Node\Document
                             ? $this->renderRichTextNodes($reference->body)
@@ -107,19 +116,24 @@ class WebPages
                     $fieldBlockMap = [
                         'blockType' => $reference->getContentType()->getId(),
                         'title' => $reference->title,
-                        'body' => ($body ? $body : ''),
+                        'body' => ($body ?? ''),
                     ];
 
                     $fieldBlockMap = $this->mapByContentType($reference->getContentType()->getId(), $reference, $fieldBlockMap);
-
-                    array_push($fieldBlocks, $fieldBlockMap);
-                }
+                });
             }
-        }
 
-        return $fieldBlocks;
+            return $block;
+        });
     }
 
+    /**
+     * Map the fields by content type.
+     * @param  string $contentType
+     * @param  object $reference
+     * @param  array $fieldBlockMap
+     * @return array
+     */
     public function mapByContentType($contentType, $reference, $fieldBlockMap)
     {
         $fieldBlockMap = collect($fieldBlockMap);

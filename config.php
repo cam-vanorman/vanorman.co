@@ -15,26 +15,39 @@ return [
         '404' => getenv('SITE_404'),
     ],
 
+    // Contentful
+    'contentful_env_id' => getenv('CONTENTFUL_ENV_ID'),
+    'contentful_space_id' => getenv('CONTENTFUL_SPACE_ID'),
+    'contentful_access_token' => getenv('CONTENTFUL_ACCESS_TOKEN'),
+
+    'contentful_collection' => function ($config) {
+        return (new ContentfulCollection(
+            $config->get('contentful_access_token'),
+            $config->get('contentful_space_id'),
+            $config->get('contentful_env_id')
+        ));
+    },
+
     // collections
     'collections' => [
         'pages' => [
+            'content_model' => 'webPage',
             'path' => '{pageTemplateSlug}',
             'extends' => '_layouts.pages',
             'items' => function ($config) {
-                return (new ContentfulCollection(
-                    getenv('CONTENTFUL_ACCESS_TOKEN'),
-                    getenv('CONTENTFUL_SPACE_ID')
-                ))->getWebPages();
+                return $config->get('contentful_collection')->getWebPages();
             },
         ],
         'projects' => [
+            'content_model' => 'project',
             'sort' => ['-featured', '-launched'],
             'path' => 'project/{slug}',
             'extends' => '_layouts.project',
             'items' => function ($config) {
                 return (new ContentfulCollection(
-                    getenv('CONTENTFUL_ACCESS_TOKEN'),
-                    getenv('CONTENTFUL_SPACE_ID')
+                    $config->get('contentful_access_token'),
+                    $config->get('contentful_space_id'),
+                    $config->get('contentful_env_id')
                 ))->getProjects();
             },
         ],
@@ -57,11 +70,6 @@ return [
             'content_model' => 'cardGrid',
             'sort' => 'title',
         ],
-    ],
-
-    'contentful' => [
-        'space_id' => getenv('CONTENTFUL_SPACE_ID'),
-        'access_token' => getenv('CONTENTFUL_ACCESS_TOKEN'),
     ],
 
     /*

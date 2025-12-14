@@ -2,6 +2,17 @@
 
 namespace App\Contentful;
 
+/**
+ * Class Page
+ *
+ * @package App\Contentful
+ *
+ * @property string $title
+ * @property string $slug
+ * @property string $body
+ * @property string $image
+ * @property string $embedded_media
+ */
 class Page
 {
     protected $title;

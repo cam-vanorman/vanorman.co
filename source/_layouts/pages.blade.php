@@ -12,7 +12,17 @@
 @endpush
 
 @section('body')
+    @php
+        $collections = $page->collections->map(function ($collection) {
+            return $collection->items;
+        });
+    @endphp
+
     @foreach($page->pageTemplateBlocks as $index => $fields)
-        <x-block :fields="$fields" :index="$index" />
+        <x-block
+            :fields="$fields"
+            :collections="$collections"
+            :index="$index"
+        />
     @endforeach
 @endsection
