@@ -39,7 +39,7 @@
     </div>
 
     {{-- Expertise --}}
-    <div class="page__hero h-64 md:h-35vh">
+    {{-- <div class="page__hero h-64 md:h-35vh">
         <div class="page__hero-wrap max-w-2xl p-4 mb-0 md:mb-12 md:p-8 md:text-xl">
             <h2 class="page__hero-title">Expertise</h2>
             @include('_pages.skills')
@@ -47,5 +47,5 @@
     </div>
     <div class="md:-mt-16 bg-white p-8 mb-12 rounded shadow-lg page__content">
         @include('_components.skills', ['skill' => $skill])
-    </div>
+    </div> --}}
 @stop
